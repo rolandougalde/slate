@@ -316,7 +316,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#document-repo" class="toc-h1 toc-link" data-title="Document repo">Document repo</a>
+            <a href="#documents-repository" class="toc-h1 toc-link" data-title="Documents repository">Documents repository</a>
           </li>
           <li>
             <a href="#on-premises-docs" class="toc-h1 toc-link" data-title="On premises docs">On premises docs</a>
@@ -325,7 +325,7 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#ux-file-system-permissions" class="toc-h1 toc-link" data-title="UX File system permissions">UX File system permissions</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
@@ -350,13 +350,15 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='document-repo'>Document repo</h1>
+        <h1 id='documents-repository'>Documents repository</h1>
 <p>Hola to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
 
 <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
 <h1 id='on-premises-docs'>On premises docs</h1>
+<p>The wordpress pandemonium..</p>
+
 <blockquote>
 <p>To help coworkers:</p>
 </blockquote>
@@ -368,10 +370,23 @@
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 apt update <span class="se">\ </span>apt <span class="nb">install </span>lamp <span class="o">&amp;&amp;</span> reboot
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">jaffa</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span> <span class="nx">PUBLIC</span> <span class="dl">"</span><span class="s2">-//W3C//DTD XHTML 1.0 Strict//EN</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</span><span class="dl">"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span> <span class="nx">xmlns</span><span class="o">=</span><span class="dl">"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="dl">"</span> <span class="nx">xml</span><span class="p">:</span><span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span> <span class="nx">lang</span><span class="o">=</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="o">&gt;</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div><h1 id='authentication'>Authentication</h1>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">untitled</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">http</span><span class="o">-</span><span class="nx">equiv</span><span class="o">=</span><span class="dl">"</span><span class="s2">content-type</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/html;charset=utf-8</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">generator</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">Geany 1.38</span><span class="dl">"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div><h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -401,7 +416,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='ux-file-system-permissions'>UX File system permissions</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
