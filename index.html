@@ -319,7 +319,7 @@
             <a href="#linux-cli-reference" class="toc-h1 toc-link" data-title="Linux CLI Reference">Linux CLI Reference</a>
           </li>
           <li>
-            <a href="#on-premises-docs" class="toc-h1 toc-link" data-title="On premises docs">On premises docs</a>
+            <a href="#linux-installation" class="toc-h1 toc-link" data-title="Linux Installation">Linux Installation</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -356,14 +356,33 @@
 <p>The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.</p>
 
 <p>This site is and example API documentation page was created with <a href="https://github.com/rolandougalde/slate">Slate</a>.</p>
-<h1 id='on-premises-docs'>On premises docs</h1>
-<p>The wordpress pandemonium..</p>
+<h1 id='linux-installation'>Linux Installation</h1>
+<p>Ubuntu Linux Server LTS, installation steps &amp; file definition. Configure network, create users.</p>
 
 <blockquote>
-<p>To help coworkers:</p>
+<p>Post install configuration tasks:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-apt update <span class="se">\ </span>apt <span class="nb">install </span>lamp <span class="o">&amp;&amp;</span> reboot
+apt update
+apt dist-upgrade
+
+<span class="c"># Network configuration, YAML</span>
+
+<span class="c"># This is the network config written by 'subiquity'</span>
+network:
+   ethernets:
+     ens160:
+       addresses:
+       - 192.168.101.29/22
+       gateway4: 192.168.100.1
+       nameservers:
+         addresses:
+         - 192.168.100.7
+         - 192.168.100.9
+         search:
+         - heritagesports.com
+   version: 2
+
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span> <span class="nx">PUBLIC</span> <span class="dl">"</span><span class="s2">-//W3C//DTD XHTML 1.0 Strict//EN</span><span class="dl">"</span>
     <span class="dl">"</span><span class="s2">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</span><span class="dl">"</span><span class="o">&gt;</span>
