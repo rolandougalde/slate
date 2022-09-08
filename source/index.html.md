@@ -62,26 +62,29 @@ network:
 
 # LAMP Stack installation
 
-> Install `Apache 2` Web server:
+> Install Apache 2 Web server:
 
 ```shell
 apt install apache2
 ```
 
-> Install `PHP 7.4` app server:
+> Install PHP 7.4 app server:
 
 ```shell
-apt install php php-common php-mysql
+apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt
 ```
 
-> Configure `Aapache 2`.
+> Configure Aapache 2.
 
 ```shell
 nano /etc/apache2/sites-availabe/site-com.conf
 ```
 
+We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+## Chose a VM Host
+
+Create the Virtual Machine
 
 `Website finished`
 
@@ -89,7 +92,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must review all the <code>configurations</code> with your consultant.
 </aside>
 
-# UX File system permissions
+# Website deploy
 
 ## Close site folder
 
