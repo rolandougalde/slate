@@ -1,10 +1,10 @@
 ---
-title: API Reference
+title: Linux Server Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
+  - html
+  - css
   - javascript
 
 toc_footers:
@@ -20,16 +20,16 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Linux Server Documentation Reference
 ---
 
-# Documents repository
+# Linux CLI Reference
 
-Hola to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Hello, this site was built thinking about needs of IT Infrastructure proffesionals who needs a day by day tool, that helps to get the job done insted of start looking on for poor customized solutions.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This site is and example API documentation page was created with [Slate](https://github.com/rolandougalde/slate).
 
 # On premises docs
 
