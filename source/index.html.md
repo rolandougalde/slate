@@ -94,7 +94,7 @@ You must review all the <code>configurations</code> with your consultant.
 
 # Website deploy
 
-## Close site folder
+## HTML Site deploy
 
 
 ```shell
@@ -139,7 +139,7 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Open file permisions
+## WordPress Site deploy
 
 ```shell
 chown -R www-data:root /var/www/* && find /var/www/ -type d -exec chmod 775 {} + && sudo find /var/www/ -type f -exec chmod 664 {} +
@@ -152,7 +152,7 @@ let api = kittn.authorize('meowmeowmeow');
 let max = api.kittens.get(2);
 ```
 
-> The above command returns JSON structured like this:
+> Configure Wordpress:
 
 ```json
 {
@@ -178,7 +178,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
 
-## Delete a Specific Kitten
+## Remove website
 
 ```ruby
 require 'kittn'
