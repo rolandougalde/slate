@@ -37,18 +37,6 @@ The wordpress pandemonium..
 
 > To help coworkers:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 apt update \ apt install lamp && reboot
@@ -72,7 +60,6 @@ apt update \ apt install lamp && reboot
 
 </html>
 ```
-
 
 # Authentication
 
