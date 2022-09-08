@@ -42,9 +42,9 @@ Ubuntu Linux Server LTS, installation steps & file definition. Configure network
 apt update
 apt dist-upgrade
 ```
-```yaml
-# Network configuration, YAML
+> Network configuration, YAML:
 
+```yaml
 # This is the network config written by 'subiquity'
 network:
    ethernets:
