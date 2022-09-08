@@ -82,7 +82,7 @@ nano /etc/apache2/sites-availabe/site-com.conf
 
 We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:
 
-## Chose a VM Host
+*Chose a VM Host:* find a VM host with enough resources.
 
 Create the Virtual Machine
 
