@@ -323,9 +323,14 @@
           </li>
           <li>
             <a href="#lamp-stack-installation" class="toc-h1 toc-link" data-title="LAMP Stack installation">LAMP Stack installation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#chose-a-vm-host" class="toc-h2 toc-link" data-title="Chose a VM Host">Chose a VM Host</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#ux-file-system-permissions" class="toc-h1 toc-link" data-title="UX File system permissions">UX File system permissions</a>
+            <a href="#website-deploy" class="toc-h1 toc-link" data-title="Website deploy">Website deploy</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#close-site-folder" class="toc-h2 toc-link" data-title="Close site folder">Close site folder</a>
@@ -384,28 +389,30 @@ network:
    version: 2
 </code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
-<p>Install <code>Apache 2</code> Web server:</p>
+<p>Install Apache 2 Web server:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>apache2
 </code></pre></div>
 <blockquote>
-<p>Install <code>PHP 7.4</code> app server:</p>
+<p>Install PHP 7.4 app server:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>php php-common php-mysql
+<div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>php php-common php-mysql php-gd php-imagemagic php-mbcrypt
 </code></pre></div>
 <blockquote>
-<p>Configure <code>Aapache 2</code>.</p>
+<p>Configure Aapache 2.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>nano /etc/apache2/sites-availabe/site-com.conf
 </code></pre></div>
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:</p>
+<h2 id='chose-a-vm-host'>Chose a VM Host</h2>
+<p>Create the Virtual Machine</p>
 
 <p><code>Website finished</code></p>
 
 <aside class="notice">
 You must review all the <code>configurations</code> with your consultant.
 </aside>
-<h1 id='ux-file-system-permissions'>UX File system permissions</h1><h2 id='close-site-folder'>Close site folder</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> root:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
+<h1 id='website-deploy'>Website deploy</h1><h2 id='close-site-folder'>Close site folder</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> root:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
