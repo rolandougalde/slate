@@ -3,9 +3,9 @@ title: Linux Server Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  [//]: # (- html)
-  [//]: # (- css)
-  [//]: # (- javascript)
+  - html
+  - css
+  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -58,33 +58,35 @@ network:
          search:
          - domain.com
    version: 2
-
 ```
 
 # LAMP Stack installation
 
-> Install Apache 2 Web server:
+> Install `Apache 2` Web server:
 
 ```shell
 apt install apache2
 ```
 
-> Install PHP 7.4 app server:
+> Install `PHP 7.4` app server:
 
 ```shell
 apt install php php-common php-mysql
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Configure `Aapache 2`.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+```shell
+nano /etc/apache2/sites-availabe/site-com.conf
+```
+
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Website finished`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must review all the <code>configurations</code> with your consultant.
 </aside>
 
 # UX File system permissions
