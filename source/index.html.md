@@ -31,15 +31,34 @@ The code is an important part of DevOps team nowadays, you can pick commands to 
 
 This site is and example API documentation page was created with [Slate](https://github.com/rolandougalde/slate).
 
-# On premises docs
+# Linux Installation
 
-The wordpress pandemonium..
+Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
 
-> To help coworkers:
+> Post install configuration tasks:
 
 ```shell
 # With shell, you can just pass the correct header with each request
-apt update \ apt install lamp && reboot
+apt update
+apt dist-upgrade
+
+# Network configuration, YAML
+
+# This is the network config written by 'subiquity'
+network:
+   ethernets:
+     ens160:
+       addresses:
+       - 192.168.101.29/22
+       gateway4: 192.168.100.1
+       nameservers:
+         addresses:
+         - 192.168.100.7
+         - 192.168.100.9
+         search:
+         - heritagesports.com
+   version: 2
+
 ```
 
 ```javascript
