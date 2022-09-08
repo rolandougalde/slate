@@ -382,6 +382,26 @@ network:
          search:
          - domain.com
    version: 2
+</code></pre></div><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># With shell, you can just pass the correct header with each request</span>
+<span class="s">apt update</span>
+<span class="s">apt dist-upgrade</span>
+
+<span class="c1"># Network configuration, YAML</span>
+
+<span class="c1"># This is the network config written by 'subiquity'</span>
+<span class="na">network</span><span class="pi">:</span>
+   <span class="na">ethernets</span><span class="pi">:</span>
+     <span class="na">ens160</span><span class="pi">:</span>
+       <span class="na">addresses</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">192.168.101.29/22</span>
+       <span class="na">gateway4</span><span class="pi">:</span> <span class="s">192.168.100.1</span>
+       <span class="na">nameservers</span><span class="pi">:</span>
+         <span class="na">addresses</span><span class="pi">:</span>
+         <span class="pi">-</span> <span class="s">192.168.100.7</span>
+         <span class="pi">-</span> <span class="s">192.168.100.9</span>
+         <span class="na">search</span><span class="pi">:</span>
+         <span class="pi">-</span> <span class="s">domain.com</span>
+   <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
 </code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
 <p>Install Apache 2 Web server:</p>
