@@ -36,7 +36,6 @@ This site is and example API documentation page was created with [Slate](https:/
 Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
 
 > Post install configuration tasks:
-
 ```shell
 # With shell, you can just pass the correct header with each request
 apt update
@@ -63,19 +62,14 @@ network:
 # LAMP Stack installation
 
 > Install `Apache 2` Web server:
-
 ```shell
 apt install apache2
 ```
-
 > Install `PHP 7.4` app server:
-
 ```shell
 apt install php php-common php-mysql
 ```
-
 > Configure `Aapache 2`.
-
 ```shell
 nano /etc/apache2/sites-availabe/site-com.conf
 ```
