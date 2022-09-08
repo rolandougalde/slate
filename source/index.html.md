@@ -23,7 +23,7 @@ meta:
     content: Documentation for the Kittn API
 ---
 
-# Document repo
+# Documents repository
 
 Hola to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
@@ -32,6 +32,8 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # On premises docs
+
+The wordpress pandemonium..
 
 > To help coworkers:
 
@@ -53,9 +55,22 @@ apt update \ apt install lamp && reboot
 ```
 
 ```javascript
-const kittn = require('jaffa');
 
-let api = kittn.authorize('meowmeowmeow');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.38" />
+</head>
+
+<body>
+	
+</body>
+
+</html>
 ```
 
 
@@ -99,7 +114,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# UX File system permissions
 
 ## Get All Kittens
 
