@@ -4,8 +4,8 @@ title: Linux Server Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   [//]: # (- html)
-  - css
-  - javascript
+  [//]: # (- css)
+  [//]: # (- javascript)
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
