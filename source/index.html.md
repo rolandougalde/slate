@@ -41,30 +41,8 @@ Ubuntu Linux Server LTS, installation steps & file definition. Configure network
 # With shell, you can just pass the correct header with each request
 apt update
 apt dist-upgrade
-
-# Network configuration, YAML
-
-# This is the network config written by 'subiquity'
-network:
-   ethernets:
-     ens160:
-       addresses:
-       - 192.168.101.29/22
-       gateway4: 192.168.100.1
-       nameservers:
-         addresses:
-         - 192.168.100.7
-         - 192.168.100.9
-         search:
-         - domain.com
-   version: 2
 ```
-
 ```yaml
-# With shell, you can just pass the correct header with each request
-apt update
-apt dist-upgrade
-
 # Network configuration, YAML
 
 # This is the network config written by 'subiquity'
