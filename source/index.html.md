@@ -61,15 +61,15 @@ network:
 
 # LAMP Stack installation
 
-> Install `Apache 2` Web server:
+> Install Apache 2 Web server:
 ```shell
 apt install apache2
 ```
-> Install `PHP 7.4` app server:
+> Install PHP 7.4 app server:
 ```shell
 apt install php php-common php-mysql
 ```
-> Configure `Aapache 2`.
+> Configure Aapache 2.
 ```shell
 nano /etc/apache2/sites-availabe/site-com.conf
 ```
