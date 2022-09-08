@@ -365,28 +365,7 @@
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 apt update
 apt dist-upgrade
-
-<span class="c"># Network configuration, YAML</span>
-
-<span class="c"># This is the network config written by 'subiquity'</span>
-network:
-   ethernets:
-     ens160:
-       addresses:
-       - 192.168.101.29/22
-       gateway4: 192.168.100.1
-       nameservers:
-         addresses:
-         - 192.168.100.7
-         - 192.168.100.9
-         search:
-         - domain.com
-   version: 2
-</code></pre></div><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># With shell, you can just pass the correct header with each request</span>
-<span class="s">apt update</span>
-<span class="s">apt dist-upgrade</span>
-
-<span class="c1"># Network configuration, YAML</span>
+</code></pre></div><div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># Network configuration, YAML</span>
 
 <span class="c1"># This is the network config written by 'subiquity'</span>
 <span class="na">network</span><span class="pi">:</span>
