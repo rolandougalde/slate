@@ -63,7 +63,22 @@ network:
 
 # LAMP Stack installation
 
-> To authorize, use this code:
+> Install Apache 2 Web server:
+
+```shell
+
+apt install apache2
+
+```
+
+> Install PHP 7.4 app server:
+
+```shell
+
+apt install php php-common php-mysql
+
+```
+
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
