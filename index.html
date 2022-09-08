@@ -322,15 +322,6 @@
             <a href="#linux-installation" class="toc-h1 toc-link" data-title="Linux Installation">Linux Installation</a>
           </li>
           <li>
-            <a href="#with-shell-you-can-just-pass-the-correct-header-with-each-request" class="toc-h1 toc-link" data-title="With shell, you can just pass the correct header with each request">With shell, you can just pass the correct header with each request</a>
-          </li>
-          <li>
-            <a href="#network-configuration-yaml" class="toc-h1 toc-link" data-title="Network configuration, YAML">Network configuration, YAML</a>
-          </li>
-          <li>
-            <a href="#this-is-the-network-config-written-by-39-subiquity-39" class="toc-h1 toc-link" data-title="This is the network config written by 'subiquity'">This is the network config written by 'subiquity'</a>
-          </li>
-          <li>
             <a href="#lamp-stack-installation" class="toc-h1 toc-link" data-title="LAMP Stack installation">LAMP Stack installation</a>
           </li>
           <li>
@@ -369,14 +360,16 @@
 <p>Ubuntu Linux Server LTS, installation steps &amp; file definition. Configure network, create users.</p>
 
 <blockquote>
-<p>Post install configuration tasks:
-```shell</p>
-<h1 id='with-shell-you-can-just-pass-the-correct-header-with-each-request'>With shell, you can just pass the correct header with each request</h1>
-<p>apt update
-apt dist-upgrade</p>
+<p>Post install configuration tasks:</p>
 </blockquote>
-<h1 id='network-configuration-yaml'>Network configuration, YAML</h1><h1 id='this-is-the-network-config-written-by-39-subiquity-39'>This is the network config written by &#39;subiquity&#39;</h1>
-<p>network:
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+apt update
+apt dist-upgrade
+
+<span class="c"># Network configuration, YAML</span>
+
+<span class="c"># This is the network config written by 'subiquity'</span>
+network:
    ethernets:
      ens160:
        addresses:
@@ -389,23 +382,22 @@ apt dist-upgrade</p>
          search:
          - domain.com
    version: 2
-```</p>
-<h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
+</code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
-<p>Install Apache 2 Web server:
-<code>shell
-apt install apache2
-</code>
-Install PHP 7.4 app server:
-<code>shell
-apt install php php-common php-mysql
-</code>
-Configure Aapache 2.
-<code>shell
-nano /etc/apache2/sites-availabe/site-com.conf
-</code></p>
+<p>Install <code>Apache 2</code> Web server:</p>
 </blockquote>
-
+<div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>apache2
+</code></pre></div>
+<blockquote>
+<p>Install <code>PHP 7.4</code> app server:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>php php-common php-mysql
+</code></pre></div>
+<blockquote>
+<p>Configure <code>Aapache 2</code>.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>nano /etc/apache2/sites-availabe/site-com.conf
+</code></pre></div>
 <p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code>Website finished</code></p>
