@@ -35,8 +35,6 @@ This site is and example API documentation page was created with [Slate](https:/
 
 Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
 
-> Basic configurations:
-
 ```shell
 # With shell, update the server
 apt update
@@ -51,7 +49,7 @@ adduser davivX && usermod davivX -G sudo
 ```shell
 # With shell, you can just pass the correct header with each request
 apt update
-apt install net-tools
+apt install net-tools unzip unrar
 ```
 
 > Network configuration, YAML:
@@ -91,6 +89,9 @@ apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt
 
 ```shell
 nano /etc/apache2/sites-availabe/site-com.conf
+a2enmod ssl
+a2enmod rewrite
+a2enmod headers
 ```
 
 We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:
