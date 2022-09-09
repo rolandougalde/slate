@@ -185,16 +185,14 @@ ID | The ID of the kitten to retrieve
 -rm -r /var/www/site
 ```
 
-> The above command returns JSON structured like this:
+> Remove website config file
 
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
+```shell
+a2dissite site-com.conf
+-rm -r /etc/apache2/sites-available/site-com.conf
 ```
 
-This endpoint deletes a specific kitten.
+This command deletes a specific site config file.
 
 ### HTTP Request
 
