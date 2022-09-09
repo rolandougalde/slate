@@ -495,14 +495,12 @@ Remember — a happy kitten is an authenticated kitten!
 <h2 id='remove-website'>Remove website</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nt">-rm</span> <span class="nt">-r</span> /var/www/site
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Remove website config file</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>a2dissite site-com.conf
+<span class="nt">-rm</span> <span class="nt">-r</span> /etc/apache2/sites-available/site-com.conf
+</code></pre></div>
+<p>This command deletes a specific site config file.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
