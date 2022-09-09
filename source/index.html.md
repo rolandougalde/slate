@@ -25,13 +25,7 @@ meta:
 
 # Linux CLI Reference
 
-Hello, this site was built thinking about needs of IT Infrastructure proffesionals who needs a day by day tool, that helps to get the job done insted of start looking for poor customized solutions.
-
-The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.
-
-This site is and example API documentation page was created with [Slate](https://github.com/rolandougalde/slate).
-
-# Linux Installation
+> Update the server:
 
 ```shell
 # With shell, update the server
@@ -41,6 +35,15 @@ apt dist-upgrade
 # Create the SFTP user
 adduser davivX && usermod davivX -G sudo
 ```
+
+Hello, this site was built thinking about needs of IT Infrastructure proffesionals who needs a day by day tool, that helps to get the job done insted of start looking for poor customized solutions.
+
+The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.
+
+This site is and example API documentation page was created with [Slate](https://github.com/rolandougalde/slate).
+
+# Linux Installation
+
 
 Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
 
