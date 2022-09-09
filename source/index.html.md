@@ -33,8 +33,6 @@ This site is and example API documentation page was created with [Slate](https:/
 
 # Linux Installation
 
-Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
-
 ```shell
 # With shell, update the server
 apt update
@@ -43,6 +41,8 @@ apt dist-upgrade
 # Create the SFTP user
 adduser davivX && usermod davivX -G sudo
 ```
+
+Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
 
 > Post install configuration tasks:
 
