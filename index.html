@@ -358,10 +358,6 @@
 <p>This site is and example API documentation page was created with <a href="https://github.com/rolandougalde/slate">Slate</a>.</p>
 <h1 id='linux-installation'>Linux Installation</h1>
 <p>Ubuntu Linux Server LTS, installation steps &amp; file definition. Configure network, create users.</p>
-
-<blockquote>
-<p>Basic configurations:</p>
-</blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, update the server</span>
 apt update
 apt dist-upgrade
@@ -374,7 +370,7 @@ adduser davivX <span class="o">&amp;&amp;</span> usermod davivX <span class="nt"
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 apt update
-apt <span class="nb">install </span>net-tools
+apt <span class="nb">install </span>net-tools unzip unrar
 </code></pre></div>
 <blockquote>
 <p>Network configuration, YAML:</p>
@@ -408,6 +404,9 @@ apt <span class="nb">install </span>net-tools
 <p>Configure Aapache 2.</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>nano /etc/apache2/sites-availabe/site-com.conf
+a2enmod ssl
+a2enmod rewrite
+a2enmod headers
 </code></pre></div>
 <p>We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:</p>
 
