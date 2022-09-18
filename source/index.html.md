@@ -9,7 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='[https://github.com/rolandougalde/slate]'>Documentation Powered by Slate</a>
+  - <a href='[https://github.com/slatedocs/slate#readme]'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -41,7 +41,7 @@ Hello, this site was built thinking about needs of IT Infrastructure proffesiona
 
 The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.
 
-This site is and example API documentation page was created with [Slate](https://github.com/rolandougalde/slate).
+This site is and example API documentation page was created with [Slate](https://github.com/slatedocs/slate#readme).
 
 # Linux Installation
 
