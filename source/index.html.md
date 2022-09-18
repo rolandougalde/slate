@@ -45,7 +45,12 @@ This site is and example API documentation page was created with [Slate](https:/
 
 # Linux Installation
 
-Ubuntu Linux Server LTS, installation steps & file definition. Configure network, create users.
+Ubuntu Linux Server LTS, installation steps & file definition.
+
+- Configure network
+- Create users
+- Set up applications
+- CI/CD Tests
 
 > Post install configuration tasks:
 
