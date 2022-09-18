@@ -1,1 +1,1 @@
-# Docker ::whale::
+# Docker :whale:
