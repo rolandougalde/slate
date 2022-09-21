@@ -1,5 +1,5 @@
 # Docker
 
-*Docker documents* :whale:
+*Docker documents*
 
 
