@@ -80,9 +80,19 @@ apt update
 apt install net-tools unzip unrar
 ```
 
-- Create users
+- Create users and groups
+
+> Create user:
+
+```shell
+# Create the SFTP user
+adduser xanatos
+
+# Add user to sudo group
+usermod -G sudo xanatos
+```
+
 - Set up applications
-- CI/CD Tests
 
 # LAMP Stack installation
 
