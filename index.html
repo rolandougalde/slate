@@ -410,9 +410,20 @@ apt update
 apt <span class="nb">install </span>net-tools unzip unrar
 </code></pre></div>
 <ul>
-<li>Create users</li>
+<li>Create users and groups</li>
+</ul>
+
+<blockquote>
+<p>Create user:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create the SFTP user</span>
+adduser xanatos
+
+<span class="c"># Add user to sudo group</span>
+usermod <span class="nt">-G</span> <span class="nb">sudo </span>xanatos
+</code></pre></div>
+<ul>
 <li>Set up applications</li>
-<li>CI/CD Tests</li>
 </ul>
 <h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
