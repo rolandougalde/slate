@@ -32,6 +32,12 @@ The code is an important part of DevOps team nowadays, you can pick commands to 
 
 This site is and example API documentation page was created with [Slate](https://github.com/slatedocs/slate).
 
+# Linux Installation
+
+Ubuntu Linux Server LTS, installation steps & file definition.
+
+- Server Update
+
 > Update the server:
 
 ```shell
@@ -43,22 +49,7 @@ apt dist-upgrade
 adduser davivX && usermod davivX -G sudo
 ```
 
-# Linux Installation
-
-Ubuntu Linux Server LTS, installation steps & file definition.
-
 - Configure network
-- Create users
-- Set up applications
-- CI/CD Tests
-
-> Post install configuration tasks:
-
-```shell
-# With shell, you can just pass the correct header with each request
-apt update
-apt install net-tools unzip unrar
-```
 
 > Network configuration, YAML:
 
@@ -79,7 +70,19 @@ network:
    version: 2
 ```
 
+- Install tools
 
+> Post install configuration tasks:
+
+```shell
+# With shell, you can just pass the correct header with each request
+apt update
+apt install net-tools unzip unrar
+```
+
+- Create users
+- Set up applications
+- CI/CD Tests
 
 # LAMP Stack installation
 
