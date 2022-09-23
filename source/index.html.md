@@ -45,8 +45,8 @@ Ubuntu Linux Server LTS, installation steps & file definition.
 apt update
 apt dist-upgrade
 
-# Create the SFTP user
-adduser davivX && usermod davivX -G sudo
+# SNAP update
+sanp refresh
 ```
 
 - Configure network
@@ -94,6 +94,16 @@ usermod -G sudo xanatos
 
 - Set up applications
 
+# Install apps
+
+```shell
+# Install Nano
+Apt install nano
+
+# Configure Nano
+nano /etc/nanorc
+```
+
 # LAMP Stack installation
 
 > Install Apache 2 Web server:
@@ -138,42 +148,35 @@ You must review all the <code>configurations</code> with your consultant.
 chown -R root:root /var/www/* && find /var/www/ -type d -exec chmod 755 {} + && sudo find /var/www/ -type f -exec chmod 644 {} +
 ```
 
-> The above command returns JSON structured like this:
+> Submit engine form:
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+```html
+<!DOCTYPE html>
+<html>
+  <head>Website Name</head>
+  <body>
+    <form name="loginform" id="loginform" action="https://backend.website.local/default.aspx" method="post">
+    <input type="text" name="Account" id="userbox" placeholder="Username">
+   </form>
+  </body>
+</html>
 ```
 
-This endpoint retrieves all kittens.
+This form submites credentials to the site backend.
 
-### HTTP Request
+### HTTP / HTTPS Request website
 
-`GET http://example.com/api/kittens`
+`http://example.com/`
 
-### Query Parameters
+### Website Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+User      | test    | If set to true, the result will also include cats.
+Password  | test    | If set to false, the result will include kittens that have already been adopted.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — check all the website menus.
 </aside>
 
 ## WordPress Site deploy
