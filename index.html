@@ -322,6 +322,9 @@
             <a href="#linux-installation" class="toc-h1 toc-link" data-title="Linux Installation">Linux Installation</a>
           </li>
           <li>
+            <a href="#install-apps" class="toc-h1 toc-link" data-title="Install apps">Install apps</a>
+          </li>
+          <li>
             <a href="#lamp-stack-installation" class="toc-h1 toc-link" data-title="LAMP Stack installation">LAMP Stack installation</a>
           </li>
           <li>
@@ -373,8 +376,8 @@
 apt update
 apt dist-upgrade
 
-<span class="c"># Create the SFTP user</span>
-adduser davivX <span class="o">&amp;&amp;</span> usermod davivX <span class="nt">-G</span> <span class="nb">sudo</span>
+<span class="c"># SNAP update</span>
+sanp refresh
 </code></pre></div>
 <ul>
 <li>Configure network</li>
@@ -425,7 +428,12 @@ usermod <span class="nt">-G</span> <span class="nb">sudo </span>xanatos
 <ul>
 <li>Set up applications</li>
 </ul>
-<h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
+<h1 id='install-apps'>Install apps</h1><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install Nano</span>
+Apt <span class="nb">install </span>nano
+
+<span class="c"># Configure Nano</span>
+nano /etc/nanorc
+</code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
 <p>Install Apache 2 Web server:</p>
 </blockquote>
@@ -458,29 +466,22 @@ You must review all the <code>configurations</code> with your consultant.
 <h1 id='website-deploy'>Website deploy</h1><h2 id='html-site-deploy'>HTML Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> root:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Submit engine form:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>Website Name<span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">name=</span><span class="s">"loginform"</span> <span class="na">id=</span><span class="s">"loginform"</span> <span class="na">action=</span><span class="s">"https://backend.website.local/default.aspx"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"Account"</span> <span class="na">id=</span><span class="s">"userbox"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>This form submites credentials to the site backend.</p>
+<h3 id='http-https-request-website'>HTTP / HTTPS Request website</h3>
+<p><code>http://example.com/</code></p>
+<h3 id='website-parameters'>Website Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -489,19 +490,19 @@ You must review all the <code>configurations</code> with your consultant.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
+<td>User</td>
+<td>test</td>
 <td>If set to true, the result will also include cats.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
+<td>Password</td>
+<td>test</td>
 <td>If set to false, the result will include kittens that have already been adopted.</td>
 </tr>
 </tbody></table>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — check all the website menus.
 </aside>
 <h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
@@ -523,7 +524,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -546,7 +547,7 @@ Remember — a happy kitten is an authenticated kitten!
 <span class="nt">-rm</span> <span class="nt">-r</span> /etc/apache2/sites-available/site-com.conf
 </code></pre></div>
 <p>This command deletes a specific site config file.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
