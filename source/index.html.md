@@ -12,8 +12,9 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
   - openssl
+  - docker
+  - errors
 
 search: true
 
