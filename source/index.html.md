@@ -35,27 +35,19 @@ This site is and example API documentation page was created with [Slate](https:/
 
 # Linux Installation
 
-Ubuntu Linux Server LTS, installation steps & file definition.
+Ubuntu Linux Server LTS, installation steps & file system definition.
 
+- Network Configuration
 - Server Update
+- Install tools
+- Create users and groups
+- Set up applications
 
-> Update the server:
-
-```shell
-# With shell, update the server
-apt update
-apt dist-upgrade
-
-# SNAP update
-sanp refresh
-```
-
-- Configure network
-
-> Network configuration, YAML:
+> Network configuration:
 
 ```yaml
 # This is the network config written by 'subiquity'
+# Note, this config was written is YAML, tabs should be respected*
 network:
    ethernets:
      ens160:
@@ -71,17 +63,30 @@ network:
    version: 2
 ```
 
-- Install tools
+> Server update:
 
-> Post install configuration tasks:
+```shell
+# With shell, update the server
+apt update
+apt dist-upgrade
+
+# SNAP update
+sanp refresh
+```
+
+> Install tools:
 
 ```shell
 # With shell, you can just pass the correct header with each request
 apt update
 apt install net-tools unzip unrar
-```
 
-- Create users and groups
+# Install Nano
+Apt install nano
+
+# Configure Nano
+nano /etc/nanorc
+```
 
 > Create user:
 
@@ -91,18 +96,6 @@ adduser xanatos
 
 # Add user to sudo group
 usermod -G sudo xanatos
-```
-
-- Set up applications
-
-# Install apps
-
-```shell
-# Install Nano
-Apt install nano
-
-# Configure Nano
-nano /etc/nanorc
 ```
 
 # LAMP Stack installation
