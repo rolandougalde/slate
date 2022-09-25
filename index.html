@@ -516,20 +516,24 @@ You must review all the <code>configurations</code> with your consultant.
 Remember — check all the website menus links, images and pages.
 </aside>
 <h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cd">/** Wordpress configuration file */</span>
+</code></pre></div>
+<blockquote>
+<p>Wordpress configuration file:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight php tab-php"><code><span class="cd">/** Wordpress configuration file */</span>
 
 <span class="c1">// ** MySQL settings - You can get this info from your web host ** //</span>
 <span class="cd">/** The name of the database for WordPress */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_NAME'</span><span class="p">,</span> <span class="s1">'db-blog-wagerweb-net'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_NAME'</span><span class="p">,</span> <span class="s1">'db-blog-domian-local'</span><span class="p">);</span>
 
 <span class="cd">/** MySQL database username */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_USER'</span><span class="p">,</span> <span class="s1">'wp_user'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_USER'</span><span class="p">,</span> <span class="s1">'wp-user'</span><span class="p">);</span>
 
 <span class="cd">/** MySQL database password */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_PASSWORD'</span><span class="p">,</span> <span class="s1">'pilsen'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_PASSWORD'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">);</span>
 
 <span class="cd">/** MySQL hostname */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_HOST'</span><span class="p">,</span> <span class="s1">'vm-phndb01'</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_HOST'</span><span class="p">,</span> <span class="s1">'website-db'</span><span class="p">);</span>
 
 <span class="cd">/** Database Charset to use in creating database tables. */</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">'DB_CHARSET'</span><span class="p">,</span> <span class="s1">'utf8mb4'</span><span class="p">);</span>
@@ -540,20 +544,9 @@ Remember — check all the website menus links, images and pages.
 <span class="cd">/** Memory limit */</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">'WP_MEMORY_LIMIT'</span><span class="p">,</span> <span class="s1">'128M'</span><span class="p">);</span>
 </code></pre></div>
-<blockquote>
-<p>Configure Wordpress:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This file should be tested.</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<aside class="warning">Avoid special characters typed in a line, user <code>&lt;code&gt;</code> blocks to denote code.</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
