@@ -46,8 +46,8 @@ Ubuntu Linux Server LTS, installation steps & file system definition.
 > Network configuration:
 
 ```yaml
-# This is the network config written by 'subiquity'
 # Note, this config was written is YAML, tabs should be respected*
+# This is the network config written by 'subiquity'
 network:
    ethernets:
      ens160:
@@ -67,35 +67,31 @@ network:
 
 ```shell
 # With shell, update the server
-apt update
-apt dist-upgrade
+$ apt update
+$ apt dist-upgrade
 
 # SNAP update
-sanp refresh
+$ sanp refresh
 ```
-
-> Install tools:
-
-```shell
-# With shell, you can just pass the correct header with each request
-apt update
-apt install net-tools unzip unrar
-
-# Install Nano
-Apt install nano
-
-# Configure Nano
-nano /etc/nanorc
-```
-
-> Create user:
+> Create user and groups:
 
 ```shell
 # Create the SFTP user
-adduser xanatos
+$ adduser xanatos
 
 # Add user to sudo group
-usermod -G sudo xanatos
+$ usermod -G sudo xanatos
+```
+
+> Set up applications:
+
+```shell
+# With shell, you can just pass the correct header with each request
+$ apt update
+$ apt install net-tools unzip unrar aptitude nano 
+
+# Configure Nano
+$ nano /etc/nanorc
 ```
 
 # LAMP Stack installation
@@ -103,22 +99,22 @@ usermod -G sudo xanatos
 > Install Apache 2 Web server:
 
 ```shell
-apt install apache2
+$ apt install apache2
 ```
 
 > Install PHP 7.4 app server:
 
 ```shell
-apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt
+$ apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt
 ```
 
 > Configure Aapache 2.
 
 ```shell
-nano /etc/apache2/sites-availabe/site-com.conf
-a2enmod ssl
-a2enmod rewrite
-a2enmod headers
+$ nano /etc/apache2/sites-availabe/site-com.conf
+$ a2enmod ssl
+$ a2enmod rewrite
+$ a2enmod headers
 ```
 
 We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:
