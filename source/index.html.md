@@ -86,9 +86,9 @@ $ usermod -G sudo xanatos
 > Set up applications:
 
 ```shell
-# With shell, you can just pass the correct header with each request
+# Install common used packages
 $ apt update
-$ apt install net-tools unzip unrar aptitude nano 
+$ apt install nano net-tools unzip unrar aptitude smnpd
 
 # Configure Nano
 $ nano /etc/nanorc
@@ -96,22 +96,29 @@ $ nano /etc/nanorc
 
 # LAMP Stack installation
 
+You may have heard something about the LAMP stack. That wouldn’t be surprising, since some of today’s most popular open source web applications — for example, WordPress, Joomla and Drupal — run on LAMP.
+
 > Install Apache 2 Web server:
 
 ```shell
+# Install apache2 web server
 $ apt install apache2
 ```
 
 > Install PHP 7.4 app server:
 
 ```shell
-$ apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt
+# Install php & wordpress required packages
+$ apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt php-xml php-xsl php-zip php-gz
 ```
 
 > Configure Aapache 2.
 
 ```shell
+# Edit website configuration file
 $ nano /etc/apache2/sites-availabe/site-com.conf
+
+# Enable required "mods"
 $ a2enmod ssl
 $ a2enmod rewrite
 $ a2enmod headers
@@ -121,7 +128,12 @@ We have sites written in HTML, we also have wordpress as CMS, the server should 
 
 *Chose a VM Host:* find a VM host with enough resources.
 
-Create the Virtual Machine
+- Create the Virtual Machine
+- Configure web server
+- Configure website
+- Clone website code
+- Set file ssytem permisions
+- Publish the website
 
 `Website finished`
 
@@ -162,11 +174,11 @@ This form submites credentials to the site backend.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-User      | test    | If set to true, the result will also include cats.
-Password  | test    | If set to false, the result will include kittens that have already been adopted.
+User      | test    | If set to true.
+Password  | test    | If set to true.
 
 <aside class="success">
-Remember — check all the website menus.
+Remember — check all the website menus links, images and pages.
 </aside>
 
 ## WordPress Site deploy
@@ -175,11 +187,30 @@ Remember — check all the website menus.
 chown -R www-data:root /var/www/* && find /var/www/ -type d -exec chmod 775 {} + && sudo find /var/www/ -type f -exec chmod 664 {} +
 ```
 
-```javascript
-const kittn = require('kittn');
+```php
+/** Wordpress configuration file */
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'db-blog-wagerweb-net');
+
+/** MySQL database username */
+define('DB_USER', 'wp_user');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'pilsen');
+
+/** MySQL hostname */
+define('DB_HOST', 'vm-phndb01');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8mb4');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+
+/** Memory limit */
+define('WP_MEMORY_LIMIT', '128M');
 ```
 
 > Configure Wordpress:
