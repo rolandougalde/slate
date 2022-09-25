@@ -186,22 +186,23 @@ Remember — check all the website menus links, images and pages.
 ```shell
 chown -R www-data:root /var/www/* && find /var/www/ -type d -exec chmod 775 {} + && sudo find /var/www/ -type f -exec chmod 664 {} +
 ```
+> Wordpress configuration file:
 
 ```php
 /** Wordpress configuration file */
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'db-blog-wagerweb-net');
+define('DB_NAME', 'db-blog-domian-local');
 
 /** MySQL database username */
-define('DB_USER', 'wp_user');
+define('DB_USER', 'wp-user');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'pilsen');
+define('DB_PASSWORD', 'password');
 
 /** MySQL hostname */
-define('DB_HOST', 'vm-phndb01');
+define('DB_HOST', 'website-db');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
@@ -213,21 +214,9 @@ define('DB_COLLATE', '');
 define('WP_MEMORY_LIMIT', '128M');
 ```
 
-> Configure Wordpress:
+This file should be tested.
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<aside class="warning">Avoid special characters typed in a line, user <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
