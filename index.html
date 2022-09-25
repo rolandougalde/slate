@@ -322,9 +322,6 @@
             <a href="#linux-installation" class="toc-h1 toc-link" data-title="Linux Installation">Linux Installation</a>
           </li>
           <li>
-            <a href="#install-apps" class="toc-h1 toc-link" data-title="Install apps">Install apps</a>
-          </li>
-          <li>
             <a href="#lamp-stack-installation" class="toc-h1 toc-link" data-title="LAMP Stack installation">LAMP Stack installation</a>
           </li>
           <li>
@@ -376,30 +373,21 @@
 
 <p>This site is and example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
 <h1 id='linux-installation'>Linux Installation</h1>
-<p>Ubuntu Linux Server LTS, installation steps &amp; file definition.</p>
+<p>Ubuntu Linux Server LTS, installation steps &amp; file system definition.</p>
 
 <ul>
+<li>Network Configuration</li>
 <li>Server Update</li>
+<li>Install tools</li>
+<li>Create users and groups</li>
+<li>Set up applications</li>
 </ul>
 
 <blockquote>
-<p>Update the server:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, update the server</span>
-apt update
-apt dist-upgrade
-
-<span class="c"># SNAP update</span>
-sanp refresh
-</code></pre></div>
-<ul>
-<li>Configure network</li>
-</ul>
-
-<blockquote>
-<p>Network configuration, YAML:</p>
+<p>Network configuration:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># This is the network config written by 'subiquity'</span>
+<span class="c1"># Note, this config was written is YAML, tabs should be respected*</span>
 <span class="na">network</span><span class="pi">:</span>
    <span class="na">ethernets</span><span class="pi">:</span>
      <span class="na">ens160</span><span class="pi">:</span>
@@ -414,21 +402,29 @@ sanp refresh
          <span class="pi">-</span> <span class="s">domain.com</span>
    <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
 </code></pre></div>
-<ul>
-<li>Install tools</li>
-</ul>
-
 <blockquote>
-<p>Post install configuration tasks:</p>
+<p>Server update:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, update the server</span>
+apt update
+apt dist-upgrade
+
+<span class="c"># SNAP update</span>
+sanp refresh
+</code></pre></div>
+<blockquote>
+<p>Install tools:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 apt update
 apt <span class="nb">install </span>net-tools unzip unrar
-</code></pre></div>
-<ul>
-<li>Create users and groups</li>
-</ul>
 
+<span class="c"># Install Nano</span>
+Apt <span class="nb">install </span>nano
+
+<span class="c"># Configure Nano</span>
+nano /etc/nanorc
+</code></pre></div>
 <blockquote>
 <p>Create user:</p>
 </blockquote>
@@ -437,15 +433,6 @@ adduser xanatos
 
 <span class="c"># Add user to sudo group</span>
 usermod <span class="nt">-G</span> <span class="nb">sudo </span>xanatos
-</code></pre></div>
-<ul>
-<li>Set up applications</li>
-</ul>
-<h1 id='install-apps'>Install apps</h1><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install Nano</span>
-Apt <span class="nb">install </span>nano
-
-<span class="c"># Configure Nano</span>
-nano /etc/nanorc
 </code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
 <p>Install Apache 2 Web server:</p>
