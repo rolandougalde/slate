@@ -342,15 +342,18 @@
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-          <li>
             <a href="#openssl" class="toc-h1 toc-link" data-title="OpenSSL">OpenSSL</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#convert-standard-pem-to-pkcs12" class="toc-h2 toc-link" data-title="Convert standard PEM to PKCS12">Convert standard PEM to PKCS12</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#docker" class="toc-h1 toc-link" data-title="Docker">Docker</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -566,6 +569,13 @@ Remember — check all the website menus.
 <td>The ID of the kitten to delete</td>
 </tr>
 </tbody></table>
+<h1 id='openssl'>OpenSSL</h1><h2 id='convert-standard-pem-to-pkcs12'>Convert standard PEM to PKCS12</h2>
+<blockquote>
+<p>OpenSSL parameters</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>openssl pkcs12 <span class="nt">-export</span> <span class="nt">-out</span> domain.name.pfx <span class="nt">-inkey</span> domain.name.key <span class="nt">-in</span> domain.name.crt <span class="nt">-certfile</span> gd-g2_iisintermediates.domain.name.p7b
+</code></pre></div><h1 id='docker'>Docker</h1>
+<p><em>Docker documents</em></p>
 <h1 id='errors'>Errors</h1>
 <p><em>Bug tracking</em></p>
 
@@ -626,12 +636,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='openssl'>OpenSSL</h1><h2 id='convert-standard-pem-to-pkcs12'>Convert standard PEM to PKCS12</h2>
-<blockquote>
-<p>OpenSSL parameters</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>openssl pkcs12 <span class="nt">-export</span> <span class="nt">-out</span> domain.name.pfx <span class="nt">-inkey</span> domain.name.key <span class="nt">-in</span> domain.name.crt <span class="nt">-certfile</span> gd-g2_iisintermediates.domain.name.p7b
-</code></pre></div>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
