@@ -386,8 +386,8 @@
 <blockquote>
 <p>Network configuration:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># This is the network config written by 'subiquity'</span>
-<span class="c1"># Note, this config was written is YAML, tabs should be respected*</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># Note, this config was written is YAML, tabs should be respected*</span>
+<span class="c1"># This is the network config written by 'subiquity'</span>
 <span class="na">network</span><span class="pi">:</span>
    <span class="na">ethernets</span><span class="pi">:</span>
      <span class="na">ens160</span><span class="pi">:</span>
@@ -406,51 +406,48 @@
 <p>Server update:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, update the server</span>
-apt update
-apt dist-upgrade
+<span class="nv">$ </span>apt update
+<span class="nv">$ </span>apt dist-upgrade
 
 <span class="c"># SNAP update</span>
-sanp refresh
+<span class="nv">$ </span>sanp refresh
 </code></pre></div>
 <blockquote>
-<p>Install tools:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-apt update
-apt <span class="nb">install </span>net-tools unzip unrar
-
-<span class="c"># Install Nano</span>
-Apt <span class="nb">install </span>nano
-
-<span class="c"># Configure Nano</span>
-nano /etc/nanorc
-</code></pre></div>
-<blockquote>
-<p>Create user:</p>
+<p>Create user and groups:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create the SFTP user</span>
-adduser xanatos
+<span class="nv">$ </span>adduser xanatos
 
 <span class="c"># Add user to sudo group</span>
-usermod <span class="nt">-G</span> <span class="nb">sudo </span>xanatos
+<span class="nv">$ </span>usermod <span class="nt">-G</span> <span class="nb">sudo </span>xanatos
+</code></pre></div>
+<blockquote>
+<p>Set up applications:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<span class="nv">$ </span>apt update
+<span class="nv">$ </span>apt <span class="nb">install </span>net-tools unzip unrar aptitude nano 
+
+<span class="c"># Configure Nano</span>
+<span class="nv">$ </span>nano /etc/nanorc
 </code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
 <blockquote>
 <p>Install Apache 2 Web server:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>apache2
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>apt <span class="nb">install </span>apache2
 </code></pre></div>
 <blockquote>
 <p>Install PHP 7.4 app server:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>apt <span class="nb">install </span>php php-common php-mysql php-gd php-imagemagic php-mbcrypt
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>apt <span class="nb">install </span>php php-common php-mysql php-gd php-imagemagic php-mbcrypt
 </code></pre></div>
 <blockquote>
 <p>Configure Aapache 2.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>nano /etc/apache2/sites-availabe/site-com.conf
-a2enmod ssl
-a2enmod rewrite
-a2enmod headers
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>nano /etc/apache2/sites-availabe/site-com.conf
+<span class="nv">$ </span>a2enmod ssl
+<span class="nv">$ </span>a2enmod rewrite
+<span class="nv">$ </span>a2enmod headers
 </code></pre></div>
 <p>We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:</p>
 
