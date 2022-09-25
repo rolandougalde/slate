@@ -585,11 +585,9 @@ Remember — check all the website menus.
 </code></pre></div><h1 id='errors'>Errors</h1>
 <p><em>Bug tracking</em></p>
 
-<!--
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+This error section is stored in a separate files in <code>/var/log/</code>. Operating system allows you to separate out your logs into many files...just look for them into the <code>logs</code> folder and check them from the top or track them in real time <code>tail -f</code>'s command. Files are stored in the order listed.
 </aside>
--->
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Tack erros in log file</span>
 <span class="nv">$ </span>nano /var/log/syslog
 
@@ -649,6 +647,12 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+
+<!--
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+-->
 
       </div>
       <div class="dark-box">
