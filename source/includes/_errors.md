@@ -3,7 +3,7 @@
 *Bug tracking*
 
 <aside class="notice">
-This error section is stored in a separate files in <code>/var/log/</code>. Operating system allows you to separate out your logs into many files...just look for them into the <code>logs</code> folder and check them from the top or track them in real time <code>tail -f</code>'s command. Files are stored in the order listed.
+This error section is stored in a separate files in <code>/var/log/</code>. Operating system allows you to separate out your logs into many files...just look for them into the <code>logs</code> folder and check them from the top or track them in real time with <code>tail -f</code>'s command. Files are stored in the order listed.
 </aside>
 
 ```shell
