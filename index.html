@@ -469,12 +469,29 @@
 <li>Publish the website</li>
 </ul>
 
-<p><code>Website finished</code></p>
+<p><code>https://website.local</code></p>
 
 <aside class="notice">
 You must review all the <code>configurations</code> with your consultant.
 </aside>
-<h1 id='website-deploy'>Website deploy</h1><h2 id='html-site-deploy'>HTML Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> root:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
+<h1 id='website-deploy'>Website deploy</h1><h2 id='html-site-deploy'>HTML Site deploy</h2>
+<ul>
+<li>Create a source code directory</li>
+<li>Clone the website app code</li>
+<li>Set file system, directory and file permisions</li>
+</ul>
+
+<blockquote>
+<p>Create a source directory</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create a directory</span>
+<span class="nv">$ </span><span class="nb">mkdir</span> /var/www/website-local/
+</code></pre></div>
+<blockquote>
+<p>Set file system, directory and file permisions</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Change owner and directory and file permisions</span>
+<span class="nb">chown</span> <span class="nt">-R</span> root:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
 </code></pre></div>
 <blockquote>
 <p>Submit engine form:</p>
