@@ -2,11 +2,9 @@
 
 *Bug tracking*
 
-<!--
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+This error section is stored in a separate files in <code>/var/log/</code>. Operating system allows you to separate out your logs into many files...just look for them into the <code>logs</code> folder and check them from the top or track them in real time <code>tail -f</code>'s command. Files are stored in the order listed.
 </aside>
--->
 
 ```shell
 # Tack erros in log file
@@ -31,3 +29,9 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+<!--
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+-->
