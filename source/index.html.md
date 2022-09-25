@@ -135,7 +135,7 @@ We have sites written in HTML, we also have wordpress as CMS, the server should 
 - Set file ssytem permisions
 - Publish the website
 
-`Website finished`
+`https://website.local`
 
 <aside class="notice">
 You must review all the <code>configurations</code> with your consultant.
@@ -145,8 +145,21 @@ You must review all the <code>configurations</code> with your consultant.
 
 ## HTML Site deploy
 
+- Create a source code directory
+- Clone the website app code
+- Set file system, directory and file permisions
+
+> Create a source directory
 
 ```shell
+# Create a directory
+$ mkdir /var/www/website-local/
+```
+
+> Set file system, directory and file permisions
+
+```shell
+# Change owner and directory and file permisions
 chown -R root:root /var/www/* && find /var/www/ -type d -exec chmod 755 {} + && sudo find /var/www/ -type f -exec chmod 644 {} +
 ```
 
