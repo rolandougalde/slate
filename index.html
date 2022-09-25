@@ -424,27 +424,34 @@
 <blockquote>
 <p>Set up applications:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install common used packages</span>
 <span class="nv">$ </span>apt update
-<span class="nv">$ </span>apt <span class="nb">install </span>net-tools unzip unrar aptitude nano 
+<span class="nv">$ </span>apt <span class="nb">install </span>nano net-tools unzip unrar aptitude smnpd
 
 <span class="c"># Configure Nano</span>
 <span class="nv">$ </span>nano /etc/nanorc
 </code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
+<p>You may have heard something about the LAMP stack. That wouldn’t be surprising, since some of today’s most popular open source web applications — for example, WordPress, Joomla and Drupal — run on LAMP.</p>
+
 <blockquote>
 <p>Install Apache 2 Web server:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>apt <span class="nb">install </span>apache2
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install apache2 web server</span>
+<span class="nv">$ </span>apt <span class="nb">install </span>apache2
 </code></pre></div>
 <blockquote>
 <p>Install PHP 7.4 app server:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>apt <span class="nb">install </span>php php-common php-mysql php-gd php-imagemagic php-mbcrypt
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install php &amp; wordpress required packages</span>
+<span class="nv">$ </span>apt <span class="nb">install </span>php php-common php-mysql php-gd php-imagemagic php-mbcrypt php-xml php-xsl php-zip php-gz
 </code></pre></div>
 <blockquote>
 <p>Configure Aapache 2.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>nano /etc/apache2/sites-availabe/site-com.conf
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Edit website configuration file</span>
+<span class="nv">$ </span>nano /etc/apache2/sites-availabe/site-com.conf
+
+<span class="c"># Enable required "mods"</span>
 <span class="nv">$ </span>a2enmod ssl
 <span class="nv">$ </span>a2enmod rewrite
 <span class="nv">$ </span>a2enmod headers
@@ -453,7 +460,14 @@
 
 <p><em>Chose a VM Host:</em> find a VM host with enough resources.</p>
 
-<p>Create the Virtual Machine</p>
+<ul>
+<li>Create the Virtual Machine</li>
+<li>Configure web server</li>
+<li>Configure website</li>
+<li>Clone website code</li>
+<li>Set file ssytem permisions</li>
+<li>Publish the website</li>
+</ul>
 
 <p><code>Website finished</code></p>
 
@@ -489,23 +503,42 @@ You must review all the <code>configurations</code> with your consultant.
 <tr>
 <td>User</td>
 <td>test</td>
-<td>If set to true, the result will also include cats.</td>
+<td>If set to true.</td>
 </tr>
 <tr>
 <td>Password</td>
 <td>test</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>If set to true.</td>
 </tr>
 </tbody></table>
 
 <aside class="success">
-Remember — check all the website menus.
+Remember — check all the website menus links, images and pages.
 </aside>
 <h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cd">/** Wordpress configuration file */</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// ** MySQL settings - You can get this info from your web host ** //</span>
+<span class="cd">/** The name of the database for WordPress */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_NAME'</span><span class="p">,</span> <span class="s1">'db-blog-wagerweb-net'</span><span class="p">);</span>
+
+<span class="cd">/** MySQL database username */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_USER'</span><span class="p">,</span> <span class="s1">'wp_user'</span><span class="p">);</span>
+
+<span class="cd">/** MySQL database password */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_PASSWORD'</span><span class="p">,</span> <span class="s1">'pilsen'</span><span class="p">);</span>
+
+<span class="cd">/** MySQL hostname */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_HOST'</span><span class="p">,</span> <span class="s1">'vm-phndb01'</span><span class="p">);</span>
+
+<span class="cd">/** Database Charset to use in creating database tables. */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_CHARSET'</span><span class="p">,</span> <span class="s1">'utf8mb4'</span><span class="p">);</span>
+
+<span class="cd">/** The Database Collate type. Don't change this if in doubt. */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_COLLATE'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+
+<span class="cd">/** Memory limit */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'WP_MEMORY_LIMIT'</span><span class="p">,</span> <span class="s1">'128M'</span><span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>Configure Wordpress:</p>
