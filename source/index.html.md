@@ -77,10 +77,10 @@ $ sanp refresh
 
 ```shell
 # Create the SFTP user
-$ adduser xanatos
+$ adduser davix
 
 # Add user to sudo group
-$ usermod -G sudo xanatos
+$ usermod -G sudo davix
 ```
 
 > Set up applications:
