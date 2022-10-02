@@ -37,7 +37,7 @@ $ ssh-copy-id user@server02
 ```
 
 **RSA Keys:**
-```
+```shell
 $HOME/.ssh/id_rsa– contains your private key.
 $HOME/.ssh/id_rsa.pub – contain your public key.
 ```
