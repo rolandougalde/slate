@@ -28,7 +28,7 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 */10 * * * * /usr/bin/rsync -az --delete /var/www/ user@server02:/var/www/ && /usr/bin/rsync -az --delete /var/www/ user@server03:/var/www/
 ```
 
-**Permissions script**
+**Permisions script**
 
 ```shell
 # Reset web folder permisions at 3 a.m.
