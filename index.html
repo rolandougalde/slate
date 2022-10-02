@@ -622,7 +622,11 @@ Remember — check all the website menus links, images and pages.
 <li>Disable the password login for root account.</li>
 <li>Test your password less ssh keys login using <code>ssh user@server-name</code> command.</li>
 </ul>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Gnerating keys</span>
+
+<blockquote>
+<p>Generating keys</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Generating keys</span>
 <span class="nv">$ </span>ssh-keygen
 
 Generating public/private rsa key pair.
@@ -648,12 +652,10 @@ The key<span class="s1">'s randomart image is:
 
 $ ssh-copy-id user@server02
 </span></code></pre></div>
-<p><strong>RSA Keys:</strong>
-<code>shell
-$HOME/.ssh/id_rsa– contains your private key.
-$HOME/.ssh/id_rsa.pub – contain your public key.
-</code></p>
-
+<p><strong>RSA Keys:</strong></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$HOME</span>/.ssh/id_rsa– contains your private key.
+<span class="nv">$HOME</span>/.ssh/id_rsa.pub – contain your public key.
+</code></pre></div>
 <p><strong>Backup Script</strong></p>
 
 <blockquote>
