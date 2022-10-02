@@ -13,9 +13,10 @@ toc_footers:
 
 includes:
   - openssl
+  - rsync
   - docker
   - errors
-
+  
 search: true
 
 code_clipboard: true
