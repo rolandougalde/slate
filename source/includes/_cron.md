@@ -8,8 +8,10 @@
 - Disable the password login for root account.
 - Test your password less ssh keys login using `ssh user@server-name` command.
 
+> Generating keys
+
 ```shell
-# Gnerating keys
+# Generating keys
 $ ssh-keygen
 
 Generating public/private rsa key pair.
@@ -37,6 +39,7 @@ $ ssh-copy-id user@server02
 ```
 
 **RSA Keys:**
+
 ```shell
 $HOME/.ssh/id_rsa– contains your private key.
 $HOME/.ssh/id_rsa.pub – contain your public key.
