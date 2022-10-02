@@ -13,7 +13,7 @@ toc_footers:
 
 includes:
   - openssl
-  - rsync
+  - cron
   - docker
   - errors
   
