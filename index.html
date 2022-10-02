@@ -347,16 +347,10 @@
               </ul>
           </li>
           <li>
-            <a href="#rsync-octocat" class="toc-h1 toc-link" data-title="RSync :octocat:">RSync :octocat:</a>
+            <a href="#cron-jobs" class="toc-h1 toc-link" data-title="Cron Jobs">Cron Jobs</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#backup-script" class="toc-h2 toc-link" data-title="Backup Script">Backup Script</a>
-                  </li>
-                  <li>
-                    <a href="#sync-script" class="toc-h2 toc-link" data-title="Sync script">Sync script</a>
-                  </li>
-                  <li>
-                    <a href="#permissions-script" class="toc-h2 toc-link" data-title="Permissions script">Permissions script</a>
+                    <a href="#set-up-ssh-keys-on-a-linux-system" class="toc-h2 toc-link" data-title="Set up SSH Keys on a Linux System">Set up SSH Keys on a Linux System</a>
                   </li>
               </ul>
           </li>
@@ -620,9 +614,7 @@ Remember — check all the website menus links, images and pages.
 <p>OpenSSL parameters</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>openssl pkcs12 <span class="nt">-export</span> <span class="nt">-out</span> domain.name.pfx <span class="nt">-inkey</span> domain.name.key <span class="nt">-in</span> domain.name.crt <span class="nt">-certfile</span> gd-g2_iisintermediates.domain.name.p7b
-</code></pre></div><h1 id='rsync-octocat'>RSync :octocat:</h1>
-<p><strong>Set up SSH Keys on a Linux System</strong></p>
-
+</code></pre></div><h1 id='cron-jobs'>Cron Jobs</h1><h2 id='set-up-ssh-keys-on-a-linux-system'>Set up SSH Keys on a Linux System</h2>
 <ul>
 <li>Create the ssh key pair using <code>ssh-keygen</code> command.</li>
 <li>Copy and install the public ssh key using <code>ssh-copy-id</code> command on a Linux server.</li>
@@ -636,14 +628,21 @@ Remember — check all the website menus links, images and pages.
 $HOME/.ssh/id_rsa– contains your private key.
 $HOME/.ssh/id_rsa.pub – contain your public key.
 </code></p>
-<h2 id='backup-script'>Backup Script</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create websites backup starting at at 1:00 a.m.</span>
+
+<p><strong>Backup Script</strong></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create websites backup starting at at 1:00 a.m.</span>
 0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /bin/tar <span class="nt">-zcf</span> /home/davidx/backups/app-code-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y_<span class="se">\%</span>m_<span class="se">\%</span>d_<span class="se">\%</span>H_<span class="se">\%</span>M<span class="si">)</span>.tar.gz /var/www
-</code></pre></div><h2 id='sync-script'>Sync script</h2><div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="c"># Sync websites content every 10 minutes</span>
+</code></pre></div>
+<p><strong>Sync script</strong></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="c"># Sync websites content every 10 minutes</span>
 <span class="k">*</span>/10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server02:/var/www/ <span class="o">&amp;&amp;</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server03:/var/www/
-</code></pre></div><h2 id='permissions-script'>Permissions script</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Reset web folder permisions at 3 a.m.</span>
+</code></pre></div>
+<p><strong>Permisions script</strong></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Reset web folder permisions at 3 a.m.</span>
 <span class="c"># Wordpress or Joomla permisions schema</span>
 <span class="k">*</span> 3 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Reset web folder permisions at 3 a.m.</span>
+<span class="c">#</span>
+<span class="c"># Reset web folder permisions at 3 a.m.</span>
 <span class="c"># HTML or Jamstack permisions schema</span>
 <span class="k">*</span> 3 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
 </code></pre></div><h1 id='docker'>Docker</h1>
