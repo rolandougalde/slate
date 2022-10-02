@@ -655,6 +655,10 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 </code></p>
 
 <p><strong>Backup Script</strong></p>
+
+<blockquote>
+<p>Backup script</p>
+</blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create websites backup starting at at 1:00 a.m.</span>
 0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /bin/tar <span class="nt">-zcf</span> /home/davidx/backups/app-code-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y_<span class="se">\%</span>m_<span class="se">\%</span>d_<span class="se">\%</span>H_<span class="se">\%</span>M<span class="si">)</span>.tar.gz /var/www
 </code></pre></div>
