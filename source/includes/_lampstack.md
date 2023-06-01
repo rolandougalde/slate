@@ -1,6 +1,9 @@
 # LAMP Stack installation
 
 You may have heard something about the LAMP stack. That wouldn’t be surprising, since some of today’s most popular open source web applications — for example, WordPress, Joomla and Drupal — run on LAMP.
+- Install Apache 2 Web server.
+- Install PHP 7.4 app server.
+- Configure Aapache 2.
 
 > Install Apache 2 Web server:
 
