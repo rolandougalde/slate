@@ -320,16 +320,7 @@
           </li>
           <li>
             <a href="#linux-installation" class="toc-h1 toc-link" data-title="Linux Installation">Linux Installation</a>
-          </li>
-          <li>
-            <a href="#lamp-stack-installation" class="toc-h1 toc-link" data-title="LAMP Stack installation">LAMP Stack installation</a>
-          </li>
-          <li>
-            <a href="#website-deploy" class="toc-h1 toc-link" data-title="Website deploy">Website deploy</a>
               <ul class="toc-list-h2">
-                  <li>
-                    <a href="#html-site-deploy" class="toc-h2 toc-link" data-title="HTML Site deploy">HTML Site deploy</a>
-                  </li>
                   <li>
                     <a href="#wordpress-site-deploy" class="toc-h2 toc-link" data-title="WordPress Site deploy">WordPress Site deploy</a>
                   </li>
@@ -449,109 +440,7 @@
 
 <span class="c"># Configure Nano</span>
 <span class="nv">$ </span>nano /etc/nanorc
-</code></pre></div><h1 id='lamp-stack-installation'>LAMP Stack installation</h1>
-<p>You may have heard something about the LAMP stack. That wouldn’t be surprising, since some of today’s most popular open source web applications — for example, WordPress, Joomla and Drupal — run on LAMP.</p>
-
-<blockquote>
-<p>Install Apache 2 Web server:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install apache2 web server</span>
-<span class="nv">$ </span>apt <span class="nb">install </span>apache2
-</code></pre></div>
-<blockquote>
-<p>Install PHP 7.4 app server:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install php &amp; wordpress required packages</span>
-<span class="nv">$ </span>apt <span class="nb">install </span>php php-common php-mysql php-gd php-imagemagic php-mbcrypt php-xml php-xsl php-zip php-gz
-</code></pre></div>
-<blockquote>
-<p>Configure Aapache 2.</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Edit website configuration file</span>
-<span class="nv">$ </span>nano /etc/apache2/sites-availabe/site-com.conf
-
-<span class="c"># Enable required "mods"</span>
-<span class="nv">$ </span>a2enmod ssl
-<span class="nv">$ </span>a2enmod rewrite
-<span class="nv">$ </span>a2enmod headers
-</code></pre></div>
-<p>We have sites written in HTML, we also have wordpress as CMS, the server should be provisioned as described:</p>
-
-<p><em>Chose a VM Host:</em> find a VM host with enough resources.</p>
-
-<ul>
-<li>Create the Virtual Machine</li>
-<li>Configure web server</li>
-<li>Configure website</li>
-<li>Clone website code</li>
-<li>Set file ssytem permisions</li>
-<li>Publish the website</li>
-</ul>
-
-<p><code>https://website.local</code></p>
-
-<aside class="notice">
-You must review all the <code>configurations</code> with your consultant.
-</aside>
-<h1 id='website-deploy'>Website deploy</h1><h2 id='html-site-deploy'>HTML Site deploy</h2>
-<ul>
-<li>Create a source code directory</li>
-<li>Clone the website app code</li>
-<li>Set file system, directory and file permisions</li>
-</ul>
-
-<blockquote>
-<p>Create a source directory</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create a directory</span>
-<span class="nv">$ </span><span class="nb">mkdir</span> /var/www/website-local/
-</code></pre></div>
-<blockquote>
-<p>Set file system, directory and file permisions</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Change owner and directory and file permisions</span>
-<span class="nb">chown</span> <span class="nt">-R</span> root:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
-</code></pre></div>
-<blockquote>
-<p>Submit engine form:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>Website Name<span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">name=</span><span class="s">"loginform"</span> <span class="na">id=</span><span class="s">"loginform"</span> <span class="na">action=</span><span class="s">"https://backend.website.local/default.aspx"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"Account"</span> <span class="na">id=</span><span class="s">"userbox"</span> <span class="na">placeholder=</span><span class="s">"Username"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;/form&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div>
-<p>This form submites credentials to the site backend.</p>
-<h3 id='http-https-request-website'>HTTP / HTTPS Request website</h3>
-<p><code>http://example.com/</code></p>
-<h3 id='website-parameters'>Website Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>User</td>
-<td>test</td>
-<td>If set to true.</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>test</td>
-<td>If set to true.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — check all the website menus links, images and pages.
-</aside>
-<h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
+</code></pre></div><h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
 </code></pre></div>
 <blockquote>
 <p>Wordpress configuration file:</p>
