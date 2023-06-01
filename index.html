@@ -317,14 +317,6 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#linux-cli-reference" class="toc-h1 toc-link" data-title="Linux CLI Reference">Linux CLI Reference</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#wordpress-site-deploy" class="toc-h2 toc-link" data-title="WordPress Site deploy">WordPress Site deploy</a>
-                  </li>
-                  <li>
-                    <a href="#remove-website" class="toc-h2 toc-link" data-title="Remove website">Remove website</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#mariadb-installation" class="toc-h1 toc-link" data-title="MariaDB Installation">MariaDB Installation</a>
@@ -390,75 +382,6 @@
 <p>The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.</p>
 
 <p>This site is and example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
-<h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
-</code></pre></div>
-<blockquote>
-<p>Wordpress configuration file:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight php tab-php"><code><span class="cd">/** Wordpress configuration file */</span>
-
-<span class="c1">// ** MySQL settings - You can get this info from your web host ** //</span>
-<span class="cd">/** The name of the database for WordPress */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_NAME'</span><span class="p">,</span> <span class="s1">'db-blog-domian-local'</span><span class="p">);</span>
-
-<span class="cd">/** MySQL database username */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_USER'</span><span class="p">,</span> <span class="s1">'wp-user'</span><span class="p">);</span>
-
-<span class="cd">/** MySQL database password */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_PASSWORD'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">);</span>
-
-<span class="cd">/** MySQL hostname */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_HOST'</span><span class="p">,</span> <span class="s1">'website-db'</span><span class="p">);</span>
-
-<span class="cd">/** Database Charset to use in creating database tables. */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_CHARSET'</span><span class="p">,</span> <span class="s1">'utf8mb4'</span><span class="p">);</span>
-
-<span class="cd">/** The Database Collate type. Don't change this if in doubt. */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DB_COLLATE'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
-
-<span class="cd">/** Memory limit */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'WP_MEMORY_LIMIT'</span><span class="p">,</span> <span class="s1">'128M'</span><span class="p">);</span>
-</code></pre></div>
-<p>This file should be tested.</p>
-
-<aside class="warning">Avoid special characters typed in a line, user <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='remove-website'>Remove website</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nt">-rm</span> <span class="nt">-r</span> /var/www/site
-</code></pre></div>
-<blockquote>
-<p>Remove website config file</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>a2dissite site-com.conf
-<span class="nt">-rm</span> <span class="nt">-r</span> /etc/apache2/sites-available/site-com.conf
-</code></pre></div>
-<p>This command deletes a specific site config file.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
 <h1 id='mariadb-installation'>MariaDB Installation</h1>
 <p><em>Basic configuration</em></p>
 
