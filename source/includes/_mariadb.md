@@ -50,6 +50,7 @@ $ mysql_secure_installation
 ```sql
 CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
 ```
+
 > Grant user rights:
 
 ```sql
