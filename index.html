@@ -317,9 +317,6 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#linux-cli-reference" class="toc-h1 toc-link" data-title="Linux CLI Reference">Linux CLI Reference</a>
-          </li>
-          <li>
-            <a href="#linux-installation" class="toc-h1 toc-link" data-title="Linux Installation">Linux Installation</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#wordpress-site-deploy" class="toc-h2 toc-link" data-title="WordPress Site deploy">WordPress Site deploy</a>
@@ -393,65 +390,7 @@
 <p>The code is an important part of DevOps team nowadays, you can pick commands to use directly on the console or to build custom automation scripts.</p>
 
 <p>This site is and example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
-<h1 id='linux-installation'>Linux Installation</h1>
-<p>Ubuntu Linux Server LTS, installation steps &amp; file system definition.</p>
-
-<ul>
-<li>Network Configuration</li>
-<li>Server Update</li>
-<li>Install tools</li>
-<li>Create users and groups</li>
-<li>Set up applications</li>
-</ul>
-
-<blockquote>
-<p>Network configuration:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="c1"># Note, this config was written is YAML, tabs should be respected*</span>
-<span class="c1"># This is the network config written by 'subiquity'</span>
-<span class="na">network</span><span class="pi">:</span>
-   <span class="na">ethernets</span><span class="pi">:</span>
-     <span class="na">ens160</span><span class="pi">:</span>
-       <span class="na">addresses</span><span class="pi">:</span>
-       <span class="pi">-</span> <span class="s">192.168.101.29/22</span>
-       <span class="na">gateway4</span><span class="pi">:</span> <span class="s">192.168.100.1</span>
-       <span class="na">nameservers</span><span class="pi">:</span>
-         <span class="na">addresses</span><span class="pi">:</span>
-         <span class="pi">-</span> <span class="s">192.168.100.7</span>
-         <span class="pi">-</span> <span class="s">192.168.100.9</span>
-         <span class="na">search</span><span class="pi">:</span>
-         <span class="pi">-</span> <span class="s">domain.com</span>
-   <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
-</code></pre></div>
-<blockquote>
-<p>Server update:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, update the server</span>
-<span class="nv">$ </span>apt update
-<span class="nv">$ </span>apt dist-upgrade
-
-<span class="c"># SNAP update</span>
-<span class="nv">$ </span>sanp refresh
-</code></pre></div>
-<blockquote>
-<p>Create user and groups:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create the SFTP user</span>
-<span class="nv">$ </span>adduser davix
-
-<span class="c"># Add user to sudo group</span>
-<span class="nv">$ </span>usermod <span class="nt">-G</span> <span class="nb">sudo </span>davix
-</code></pre></div>
-<blockquote>
-<p>Set up applications:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Install common used packages</span>
-<span class="nv">$ </span>apt update
-<span class="nv">$ </span>apt <span class="nb">install </span>nano net-tools unzip unrar aptitude smnpd
-
-<span class="c"># Configure Nano</span>
-<span class="nv">$ </span>nano /etc/nanorc
-</code></pre></div><h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
+<h2 id='wordpress-site-deploy'>WordPress Site deploy</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">chown</span> <span class="nt">-R</span> www-data:root /var/www/<span class="k">*</span> <span class="o">&amp;&amp;</span> find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
 </code></pre></div>
 <blockquote>
 <p>Wordpress configuration file:</p>
