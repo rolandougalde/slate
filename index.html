@@ -340,11 +340,6 @@
           </li>
           <li>
             <a href="#mariadb-installation" class="toc-h1 toc-link" data-title="MariaDB Installation">MariaDB Installation</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#create-an-admin-user" class="toc-h2 toc-link" data-title="Create an admin user">Create an admin user</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#openssl" class="toc-h1 toc-link" data-title="OpenSSL">OpenSSL</a>
@@ -660,7 +655,7 @@ This document was created as a part of academic simplest examples, it was never 
 </code></pre></div>
 <blockquote>
 <p>Managing users:</p>
-<h2 id='create-an-admin-user'>Create an admin user</h2></blockquote>
+</blockquote>
 <div class="highlight"><pre class="highlight sql tab-sql"><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">'sa'</span><span class="o">@</span><span class="s1">'%'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'your_password'</span><span class="p">;</span>
 
 <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'sa'</span><span class="o">@</span><span class="s1">'%'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'your_password'</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
