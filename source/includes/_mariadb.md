@@ -43,15 +43,15 @@ $ mysql_secure_installation
 
 # Thanks for using MariaDB!
 ```
-
 ## Managing users
 
 > Creating users:
+> 
 ```sql
 CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
 ```
-
 > Grant user rights:
+
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
 ```
