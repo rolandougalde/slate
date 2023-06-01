@@ -342,12 +342,6 @@
             <a href="#mariadb-installation" class="toc-h1 toc-link" data-title="MariaDB Installation">MariaDB Installation</a>
           </li>
           <li>
-            <a href="#update-package-manager" class="toc-h1 toc-link" data-title="Update package manager">Update package manager</a>
-          </li>
-          <li>
-            <a href="#install-mariadb" class="toc-h1 toc-link" data-title="Install MariaDB">Install MariaDB</a>
-          </li>
-          <li>
             <a href="#openssl" class="toc-h1 toc-link" data-title="OpenSSL">OpenSSL</a>
               <ul class="toc-list-h2">
                   <li>
@@ -624,44 +618,41 @@ Remember — check all the website menus links, images and pages.
 <aside class="notice">
 This document was created as a part of academic simplest examples, it was never intend to use on a production server, our lab just covers <code>Ubuntu 22.04</code> and <code>MariaDB 10.6</code> setup.
 </aside>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Update package manager</span>
+<span class="nv">$ </span>apt update
 
-<p><br />
-```shell</p>
-<h1 id='update-package-manager'>Update package manager</h1>
-<p>$ apt update</p>
-<h1 id='install-mariadb'>Install MariaDB</h1>
-<p>$ apt install mariadb-server-10.6
-$ mysql_secure_installation</p>
+<span class="c"># Install MariaDB</span>
+<span class="nv">$ </span>apt <span class="nb">install </span>mariadb-server-10.6
+<span class="nv">$ </span>mysql_secure_installation
 
-<p>Enter current password for root (enter for none): 
-OK, successfully used password, moving on...</p>
+Enter current password <span class="k">for </span>root <span class="o">(</span>enter <span class="k">for </span>none<span class="o">)</span>: 
+OK, successfully used password, moving on...
 
-<p>Change the root password? [Y/n] y
- ... Success!</p>
-
-<p>Remove anonymous users? [Y/n] y
- ... Success!</p>
-
-<p>Disallow root login remotely? [Y/n] y
- ... Success!</p>
-
-<p>Remove test database and access to it? [Y/n] y
- - Dropping test database...
+Change the root password? <span class="o">[</span>Y/n] y
  ... Success!
- - Removing privileges on test database...
- ... Success!</p>
 
-<p>Reload privilege tables now? [Y/n] y
- ... Success!</p>
+Remove anonymous <span class="nb">users</span>? <span class="o">[</span>Y/n] y
+ ... Success!
 
-<p>Cleaning up...</p>
+Disallow root login remotely? <span class="o">[</span>Y/n] y
+ ... Success!
 
-<p>All done!  If you&#39;ve completed all of the above steps, your MariaDB
-installation should now be secure.</p>
+Remove <span class="nb">test </span>database and access to it? <span class="o">[</span>Y/n] y
+ - Dropping <span class="nb">test </span>database...
+ ... Success!
+ - Removing privileges on <span class="nb">test </span>database...
+ ... Success!
 
-<p>Thanks for using MariaDB!
-```</p>
-<h1 id='openssl'>OpenSSL</h1><h2 id='convert-standard-pem-to-pkcs12'>Convert standard PEM to PKCS12</h2>
+Reload privilege tables now? <span class="o">[</span>Y/n] y
+ ... Success!
+
+Cleaning up...
+
+All <span class="k">done</span><span class="o">!</span>  If you<span class="s1">'ve completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+</span></code></pre></div><h1 id='openssl'>OpenSSL</h1><h2 id='convert-standard-pem-to-pkcs12'>Convert standard PEM to PKCS12</h2>
 <blockquote>
 <p>OpenSSL parameters</p>
 </blockquote>
