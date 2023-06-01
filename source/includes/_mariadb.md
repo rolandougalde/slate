@@ -13,6 +13,7 @@ $ apt install mariadb-server-10.6
 
 # Secure Installation
 $ mysql_secure_installation
+
 "
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
       SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
