@@ -55,4 +55,19 @@ CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
 
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
+## Create database & tables
+
+```sql
+CREATE DATABASE db_slater;
+
+USE db_slater;
+
+CREATE TABLE players  
+( id INT NOT NULL AUTO_INCREMENT,  
+  name VARCHAR(100) NOT NULL,  
+  sports VARCHAR(50),
+  PRIMARY KEY(id) );
 ```
