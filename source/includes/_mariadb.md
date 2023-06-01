@@ -46,7 +46,7 @@ $ mysql_secure_installation
 ## Managing users
 
 > Creating users:
-> 
+
 ```sql
 CREATE USER 'sa'@'%' 
 IDENTIFIED BY 'your_password';
@@ -60,7 +60,6 @@ IDENTIFIED BY 'your_password'
 WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
-
 ## Create database & tables
 
 ```sql
