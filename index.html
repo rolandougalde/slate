@@ -344,6 +344,9 @@
                   <li>
                     <a href="#managing-users" class="toc-h2 toc-link" data-title="Managing users">Managing users</a>
                   </li>
+                  <li>
+                    <a href="#create-database-amp-tables" class="toc-h2 toc-link" data-title="Create database &amp; tables">Create database &amp; tables</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -669,6 +672,16 @@ This document was created as a part of academic simplest examples, it was never 
 <p>Grant user rights:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight sql tab-sql"><code><span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">'sa'</span><span class="o">@</span><span class="s1">'%'</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">'your_password'</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
+<span class="n">FLUSH</span> <span class="k">PRIVILEGES</span><span class="p">;</span>
+</code></pre></div><h2 id='create-database-amp-tables'>Create database &amp; tables</h2><div class="highlight"><pre class="highlight sql tab-sql"><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">db_slater</span><span class="p">;</span>
+
+<span class="n">USE</span> <span class="n">db_slater</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">players</span>  
+<span class="p">(</span> <span class="n">id</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>  
+  <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>  
+  <span class="n">sports</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="p">);</span>
 </code></pre></div><h1 id='openssl'>OpenSSL</h1><h2 id='convert-standard-pem-to-pkcs12'>Convert standard PEM to PKCS12</h2>
 <blockquote>
 <p>OpenSSL parameters</p>
