@@ -41,3 +41,10 @@ $ mysql_secure_installation
 
 # Thanks for using MariaDB!
 ```
+
+> Managing users:
+```sql
+CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
+
+GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' IDENTIFIED BY 'Mapache2023#' WITH GRANT OPTION;
+```
