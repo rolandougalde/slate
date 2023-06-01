@@ -42,6 +42,7 @@ $ mysql_secure_installation
 # Thanks for using MariaDB!
 ```
 
+## Managing users
 > Managing users:
 
 ```sql
