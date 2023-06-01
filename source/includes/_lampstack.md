@@ -1,9 +1,11 @@
 # LAMP Stack installation
 
 You may have heard something about the LAMP stack. That wouldn’t be surprising, since some of today’s most popular open source web applications — for example, WordPress, Joomla and Drupal — run on LAMP.
-- Install Apache 2 Web server.
-- Install PHP 7.4 app server.
-- Configure Aapache 2.
+- Install Apache 2.4 Web server.
+- Install PHP 8.2 app server.
+- Install MySQL/MariaDB client.
+- Configure Aapache 2.4.
+- Enable required "mods".
 
 > Install Apache 2 Web server:
 
@@ -12,11 +14,11 @@ You may have heard something about the LAMP stack. That wouldn’t be surprising
 $ apt install apache2
 ```
 
-> Install PHP 7.4 app server:
+> Install PHP 8.2 app server:
 
 ```shell
 # Install php & wordpress required packages
-$ apt install php php-common php-mysql php-gd php-imagemagic php-mbcrypt php-xml php-xsl php-zip php-gz
+$ apt install php8.2 php8.2-common php8.2-mysql php8.2-gd php8.2-imagemagic php8.2-mbcrypt php8.2-xml php8.2-xsl php8.2-zip php8.2-gz
 ```
 
 > Configure Aapache 2.
@@ -100,4 +102,3 @@ Password  | test    | If set to true.
 <aside class="success">
 Remember — check all the website menus links, images and pages.
 </aside>
-
