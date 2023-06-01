@@ -43,6 +43,8 @@ $ mysql_secure_installation
 ```
 
 > Managing users:
+##  Create an admin user
+
 ```sql
 CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
 
