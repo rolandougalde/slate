@@ -46,5 +46,5 @@ $ mysql_secure_installation
 ```sql
 CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
 
-GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' IDENTIFIED BY 'Mapache2023#' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
 ```
