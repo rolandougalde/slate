@@ -62,6 +62,8 @@ FLUSH PRIVILEGES;
 ```
 ## Create database & tables
 
+> Create tables
+
 ```sql
 CREATE DATABASE db_slater;
 
