@@ -13,6 +13,7 @@ toc_footers:
 
 includes:
   - mariadb
+  - lampstack
   - openssl
   - cron
   - docker
