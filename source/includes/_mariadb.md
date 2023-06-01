@@ -13,8 +13,8 @@ $ apt install mariadb-server-10.6
 
 # Secure Installation
 $ mysql_secure_installation
-
-'# Enter current password for root (enter for none): 
+"
+# Enter current password for root (enter for none): 
 # OK, successfully used password, moving on...
 
 # Change the root password? [Y/n] y
@@ -40,5 +40,6 @@ $ mysql_secure_installation
 # All done!  If you've completed all of the above steps, your MariaDB
 # installation should now be secure.
 
-# Thanks for using MariaDB!'
+# Thanks for using MariaDB!
+"
 ```
