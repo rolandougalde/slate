@@ -5,6 +5,8 @@
 This document was created as a part of academic simplest examples, it was never intended to use on a production server, our lab just covers <code>Ubuntu 22.04</code> and <code>MariaDB 10.6</code> setup.
 </aside>
 
+> MariabDB Secure Install
+
 ```shell
 # Update package manager
 $ apt update
