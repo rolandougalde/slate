@@ -48,13 +48,16 @@ $ mysql_secure_installation
 > Creating users:
 > 
 ```sql
-CREATE USER 'sa'@'%' IDENTIFIED BY 'your_password';
+CREATE USER 'sa'@'%' 
+IDENTIFIED BY 'your_password';
 ```
 
 > Grant user rights:
 
 ```sql
-GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%' 
+IDENTIFIED BY 'your_password' 
+WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
