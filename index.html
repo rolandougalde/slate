@@ -375,6 +375,9 @@
                   <li>
                     <a href="#backup-scripts" class="toc-h2 toc-link" data-title="Backup Scripts">Backup Scripts</a>
                   </li>
+                  <li>
+                    <a href="#permisions-script" class="toc-h2 toc-link" data-title="Permisions script">Permisions script</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -779,9 +782,9 @@ The key's randomart image is:
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="c"># Sync websites content every 10 minutes</span>
 <span class="k">*</span>/10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server02:/var/www/ <span class="o">&amp;&amp;</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server03:/var/www/
-</code></pre></div>
+</code></pre></div><h2 id='permisions-script'>Permisions script</h2>
 <blockquote>
-<p>Permisions script</p>
+<p>Permisions and ownership scripts:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Reset web folder permisions at 3 a.m.</span>
 <span class="c"># Wordpress or Joomla permisions schema</span>
