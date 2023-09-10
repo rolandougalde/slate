@@ -8,10 +8,9 @@
 - Disable the password login for root account.
 - Test your password less ssh keys login using `ssh user@server-name` command.
 
-> Generating keys
-
-
 # Generating keys on the source server 
+
+> Generating keys
 
 ```shell
 $ ssh-keygen
