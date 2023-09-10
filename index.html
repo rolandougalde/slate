@@ -363,13 +363,13 @@
                   <li>
                     <a href="#set-up-ssh-keys-on-a-linux-system" class="toc-h2 toc-link" data-title="Set up SSH Keys on a Linux System">Set up SSH Keys on a Linux System</a>
                   </li>
+                  <li>
+                    <a href="#generating-keys-on-the-source-server" class="toc-h2 toc-link" data-title="Generating keys on the source server">Generating keys on the source server</a>
+                  </li>
+                  <li>
+                    <a href="#copying-the-key-to-destination-server-s" class="toc-h2 toc-link" data-title="Copying the key to destination server(s).">Copying the key to destination server(s).</a>
+                  </li>
               </ul>
-          </li>
-          <li>
-            <a href="#generating-keys-on-the-source-server" class="toc-h1 toc-link" data-title="Generating keys on the source server">Generating keys on the source server</a>
-          </li>
-          <li>
-            <a href="#copy-key-to-the-destination-server-s" class="toc-h1 toc-link" data-title="Copy key to the destination server(s).">Copy key to the destination server(s).</a>
           </li>
           <li>
             <a href="#docker" class="toc-h1 toc-link" data-title="Docker">Docker</a>
@@ -715,7 +715,7 @@ Remember — check all the website menus links, images and pages.
 <li>Disable the password login for root account.</li>
 <li>Test your password less ssh keys login using <code>ssh user@server-name</code> command.</li>
 </ul>
-<h1 id='generating-keys-on-the-source-server'>Generating keys on the source server</h1>
+<h2 id='generating-keys-on-the-source-server'>Generating keys on the source server</h2>
 <blockquote>
 <p>Generating keys</p>
 </blockquote>
@@ -741,7 +741,7 @@ The key<span class="s1">'s randomart image is:
 |                 |
 |                 |
 +-----------------+
-</span></code></pre></div><h1 id='copy-key-to-the-destination-server-s'>Copy key to the destination server(s).</h1><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>ssh-copy-id user@server02
+</span></code></pre></div><h2 id='copying-the-key-to-destination-server-s'>Copying the key to destination server(s).</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>ssh-copy-id user@server02
 </code></pre></div>
 <p><strong>RSA Keys:</strong></p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$HOME</span>/.ssh/id_rsa– contains your private key.
