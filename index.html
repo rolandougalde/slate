@@ -386,6 +386,9 @@
                   <li>
                     <a href="#install-docker" class="toc-h2 toc-link" data-title="Install Docker">Install Docker</a>
                   </li>
+                  <li>
+                    <a href="#post-install-configuration" class="toc-h2 toc-link" data-title="Post install configuration">Post install configuration</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -790,7 +793,39 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 <span class="k">*</span> 3 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>755 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>644 <span class="o">{}</span> +
 </code></pre></div><h1 id='docker'>Docker</h1>
 <p>Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle.</p>
-<h2 id='install-docker'>Install Docker</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker-ce docker-ce-cli containerd.io docker-compose-plugin
+<h2 id='install-docker'>Install Docker</h2>
+<blockquote>
+<p>Install from Docker official site:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">sudo </span>apt update
+curl <span class="nt">-fsSL</span> https://get.docker.com <span class="nt">-o</span> get-docker.sh
+<span class="nb">sudo </span>sh get-docker.sh
+</code></pre></div><h2 id='post-install-configuration'>Post install configuration</h2>
+<blockquote>
+<p>Running docker as non root user:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">sudo </span>groupadd docker
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+newgrp docker
+</code></pre></div>
+<blockquote>
+<p>Verify that you can run docker commands without sudo.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>docker run hello-world
+<span class="nb">sudo chown</span> <span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>:<span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span> /home/<span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>/.docker <span class="nt">-R</span>
+<span class="nb">sudo chmod </span>g+rwx <span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.docker"</span> <span class="nt">-R</span>
+</code></pre></div>
+<blockquote>
+<p>Enable start on boot service.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">sudo </span>systemctl <span class="nb">enable </span>docker.service
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>containerd.service
+</code></pre></div>
+<blockquote>
+<p>Disable start on boot service.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">sudo </span>systemctl disable docker.service
+<span class="nb">sudo </span>systemctl disable containerd.service
 </code></pre></div><h1 id='errors'>Errors</h1>
 <p><em>Bug tracking</em></p>
 
