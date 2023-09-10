@@ -9,8 +9,7 @@
 
 ## Generating keys on the source server 
 
-> Generating keys
-
+> Generating keys:
 ```shell
 $ ssh-keygen
 ```
@@ -37,46 +36,41 @@ The key's randomart image is:
 +-----------------+
 ```
 
-## Copying the key to destination server(s).
+## Copying the key to destination server(s)
 
+> Copying the key to destination server:
 ```shell
 $ ssh-copy-id user@server02
 ```
 
-**RSA Keys:**
-
+## RSA Keys
+> Private and public keys:
 ```shell
 $HOME/.ssh/id_rsa– contains your private key.
 $HOME/.ssh/id_rsa.pub – contain your public key.
 ```
 
-**Backup Scripts**
+## Backup Scripts
 
-> Website backup
-
+> Website backup:
 ```shell
 # Create websites backup starting at at 1:00 a.m.
 0 1 * * * /bin/tar -zcf /home/davidx/backups/app-code-$(date +\%Y_\%m_\%d_\%H_\%M).tar.gz /var/www
 ```
 
-> MongoDB backup
-
-**MongoDB backup**
-
+> MongoDB backup:
 ```shell
 # Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file
 0 4 * * * mongodump --out=/home/servicedesk/backups/rocket-chat && tar -zcvf /home/servicedesk/backups/rocket-chat-$(date +\%Y-\%m-\%d-\%H-\%M).tar.gz /home/servicedesk/rocket-chat/
 ```
 
-**Sync script**
-
+> Sync script
 ```shell
  # Sync websites content every 10 minutes
 */10 * * * * /usr/bin/rsync -az --delete /var/www/ user@server02:/var/www/ && /usr/bin/rsync -az --delete /var/www/ user@server03:/var/www/
 ```
 
-**Permisions script**
-
+> Permisions script
 ```shell
 # Reset web folder permisions at 3 a.m.
 # Wordpress or Joomla permisions schema
