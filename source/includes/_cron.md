@@ -14,6 +14,7 @@
 ```shell
 $ ssh-keygen
 ```
+> Output:
 
 ```text
 Generating public/private rsa key pair.
