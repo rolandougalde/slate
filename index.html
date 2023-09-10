@@ -367,7 +367,7 @@
                     <a href="#generating-keys-on-the-source-server" class="toc-h2 toc-link" data-title="Generating keys on the source server">Generating keys on the source server</a>
                   </li>
                   <li>
-                    <a href="#copying-the-key-to-destination-server-s" class="toc-h2 toc-link" data-title="Copying the key to destination server(s)">Copying the key to destination server(s)</a>
+                    <a href="#copying-keys" class="toc-h2 toc-link" data-title="Copying keys">Copying keys</a>
                   </li>
                   <li>
                     <a href="#rsa-keys" class="toc-h2 toc-link" data-title="RSA Keys">RSA Keys</a>
@@ -726,9 +726,9 @@ Remember — check all the website menus links, images and pages.
 </ul>
 <h2 id='generating-keys-on-the-source-server'>Generating keys on the source server</h2>
 <blockquote>
-<p>Generating keys:</p>
+<p>Generates a private and public keys:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>ssh-keygen
+<div class="highlight"><pre class="highlight shell tab-shell"><code>ssh-keygen
 </code></pre></div>
 <blockquote>
 <p>Output:</p>
@@ -753,17 +753,15 @@ The key's randomart image is:
 |                 |
 |                 |
 +-----------------+
-</code></pre></div><h2 id='copying-the-key-to-destination-server-s'>Copying the key to destination server(s)</h2>
-<blockquote>
-<p>Copying the key to destination server:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>ssh-copy-id user@server02
+</code></pre></div><h2 id='copying-keys'>Copying keys</h2>
+<p>Copying keys to destination servers:</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>ssh-copy-id user@server02
 </code></pre></div><h2 id='rsa-keys'>RSA Keys</h2>
 <blockquote>
 <p>Private and public keys:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$HOME</span>/.ssh/id_rsa– contains your private key.
-<span class="nv">$HOME</span>/.ssh/id_rsa.pub – contain your public key.
+<div class="highlight"><pre class="highlight plaintext"><code>$HOME/.ssh/id_rsa– contains your private key.
+$HOME/.ssh/id_rsa.pub – contain your public key.
 </code></pre></div><h2 id='backup-scripts'>Backup Scripts</h2>
 <blockquote>
 <p>Creates apps code backup starting at at 1:00 a.m.</p>
