@@ -65,18 +65,16 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 0 1 * * * /bin/tar -zcf /home/davidx/backups/app-code-$(date +\%Y_\%m_\%d_\%H_\%M).tar.gz /var/www
 ```
 
-> MongoDB backup:
+> Creates a MongoDB server backup, then compress the info in a TGZ file:
 
 ```shell
-# Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file
 0 4 * * * mongodump --out=/home/servicedesk/backups/rocket-chat && tar -zcvf /home/servicedesk/backups/rocket-chat-$(date +\%Y-\%m-\%d-\%H-\%M).tar.gz /home/servicedesk/rocket-chat/
 ```
 
-> Sync script
+> Sync websites content every 10 minutes
 
 ```shell
- # Sync websites content every 10 minutes
-*/10 * * * * /usr/bin/rsync -az --delete /var/www/ user@server02:/var/www/ && /usr/bin/rsync -az --delete /var/www/ user@server03:/var/www/
+ */10 * * * * /usr/bin/rsync -az --delete /var/www/ user@server02:/var/www/ && /usr/bin/rsync -az --delete /var/www/ user@server03:/var/www/
 ```
 
 ## Permisions script
@@ -85,7 +83,7 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 
 ```shell
 # Reset web folder permisions at 3 a.m.
-# Wordpress or Joomla permisions schema
+# Web apps permisions schema
 * 3 * * * /usr/bin/find /var/www/ -type d -exec chmod 775 {} + && sudo find /var/www/ -type f -exec chmod 664 {} +
 #
 # Reset web folder permisions at 3 a.m.
