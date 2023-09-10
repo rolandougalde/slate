@@ -766,10 +766,9 @@ The key's randomart image is:
 <span class="nv">$HOME</span>/.ssh/id_rsa.pub – contain your public key.
 </code></pre></div><h2 id='backup-scripts'>Backup Scripts</h2>
 <blockquote>
-<p>Website backup:</p>
+<p>Creates apps code backup starting at at 1:00 a.m.</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create websites backup starting at at 1:00 a.m.</span>
-0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /bin/tar <span class="nt">-zcf</span> /home/davidx/backups/app-code-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y_<span class="se">\%</span>m_<span class="se">\%</span>d_<span class="se">\%</span>H_<span class="se">\%</span>M<span class="si">)</span>.tar.gz /var/www
+<div class="highlight"><pre class="highlight shell tab-shell"><code>0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /bin/tar <span class="nt">-zcf</span> /home/davidx/backups/app-code-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y_<span class="se">\%</span>m_<span class="se">\%</span>d_<span class="se">\%</span>H_<span class="se">\%</span>M<span class="si">)</span>.tar.gz /var/www
 </code></pre></div>
 <blockquote>
 <p>MongoDB backup:</p>
