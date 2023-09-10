@@ -15,7 +15,6 @@
 
 ```shell
 $ ssh-keygen
-```
 
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/vivek/.ssh/id_rsa): 
@@ -37,6 +36,7 @@ The key's randomart image is:
 |                 |
 |                 |
 +-----------------+
+```
 
 # Copy key to the destination server(s).
 
