@@ -51,13 +51,20 @@ $HOME/.ssh/id_rsa– contains your private key.
 $HOME/.ssh/id_rsa.pub – contain your public key.
 ```
 
-**Backup Script**
+**Backup Scripts**
 
-> Backup script
+> Website backup
 
 ```shell
 # Create websites backup starting at at 1:00 a.m.
 0 1 * * * /bin/tar -zcf /home/davidx/backups/app-code-$(date +\%Y_\%m_\%d_\%H_\%M).tar.gz /var/www
+```
+
+> MongoDB backup
+```shell
+# Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file
+0 4 * * * mongodump --out=/home/servicedesk/backups/rocket-chat &&
+tar -zcvf /home/servicedesk/backups/rocket-chat-$(date +\%Y-\%m-\%d-\%H-\%M).tar.gz /home/servicedesk/rocket-chat/
 ```
 
 **Sync script**
