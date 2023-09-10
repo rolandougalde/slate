@@ -769,22 +769,20 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 <div class="highlight"><pre class="highlight shell tab-shell"><code>0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /bin/tar <span class="nt">-zcf</span> /home/davidx/backups/app-code-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y_<span class="se">\%</span>m_<span class="se">\%</span>d_<span class="se">\%</span>H_<span class="se">\%</span>M<span class="si">)</span>.tar.gz /var/www
 </code></pre></div>
 <blockquote>
-<p>MongoDB backup:</p>
+<p>Creates a MongoDB server backup, then compress the info in a TGZ file:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file</span>
-0 4 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> mongodump <span class="nt">--out</span><span class="o">=</span>/home/servicedesk/backups/rocket-chat <span class="o">&amp;&amp;</span> <span class="nb">tar</span> <span class="nt">-zcvf</span> /home/servicedesk/backups/rocket-chat-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y-<span class="se">\%</span>m-<span class="se">\%</span>d-<span class="se">\%</span>H-<span class="se">\%</span>M<span class="si">)</span>.tar.gz /home/servicedesk/rocket-chat/
+<div class="highlight"><pre class="highlight shell tab-shell"><code>0 4 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> mongodump <span class="nt">--out</span><span class="o">=</span>/home/servicedesk/backups/rocket-chat <span class="o">&amp;&amp;</span> <span class="nb">tar</span> <span class="nt">-zcvf</span> /home/servicedesk/backups/rocket-chat-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y-<span class="se">\%</span>m-<span class="se">\%</span>d-<span class="se">\%</span>H-<span class="se">\%</span>M<span class="si">)</span>.tar.gz /home/servicedesk/rocket-chat/
 </code></pre></div>
 <blockquote>
-<p>Sync script</p>
+<p>Sync websites content every 10 minutes</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="c"># Sync websites content every 10 minutes</span>
-<span class="k">*</span>/10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server02:/var/www/ <span class="o">&amp;&amp;</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server03:/var/www/
+<div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="k">*</span>/10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server02:/var/www/ <span class="o">&amp;&amp;</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server03:/var/www/
 </code></pre></div><h2 id='permisions-script'>Permisions script</h2>
 <blockquote>
 <p>Permisions and ownership scripts:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Reset web folder permisions at 3 a.m.</span>
-<span class="c"># Wordpress or Joomla permisions schema</span>
+<span class="c"># Web apps permisions schema</span>
 <span class="k">*</span> 3 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/find /var/www/ <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>775 <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>find /var/www/ <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>664 <span class="o">{}</span> +
 <span class="c">#</span>
 <span class="c"># Reset web folder permisions at 3 a.m.</span>
