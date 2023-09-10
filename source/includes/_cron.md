@@ -9,10 +9,10 @@
 
 ## Generating keys on the source server 
 
-> Generating keys:
+> Generates a private and public keys:
 
 ```shell
-$ ssh-keygen
+ssh-keygen
 ```
 
 > Output:
@@ -40,19 +40,19 @@ The key's randomart image is:
 +-----------------+
 ```
 
-## Copying the key to destination server(s)
+## Copying keys
 
-> Copying the key to destination server:
+Copying keys to destination servers:
 
 ```shell
-$ ssh-copy-id user@server02
+ssh-copy-id user@server02
 ```
 
 ## RSA Keys
 
 > Private and public keys:
 
-```shell
+```text
 $HOME/.ssh/id_rsa– contains your private key.
 $HOME/.ssh/id_rsa.pub – contain your public key.
 ```
