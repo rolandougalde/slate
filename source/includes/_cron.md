@@ -66,8 +66,7 @@ $HOME/.ssh/id_rsa.pub – contain your public key.
 
 ```shell
 # Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file
-0 4 * * * mongodump --out=/home/servicedesk/backups/rocket-chat &&
-tar -zcvf /home/servicedesk/backups/rocket-chat-$(date +\%Y-\%m-\%d-\%H-\%M).tar.gz /home/servicedesk/rocket-chat/
+0 4 * * * mongodump --out=/home/servicedesk/backups/rocket-chat && tar -zcvf /home/servicedesk/backups/rocket-chat-$(date +\%Y-\%m-\%d-\%H-\%M).tar.gz /home/servicedesk/rocket-chat/
 ```
 
 **Sync script**
