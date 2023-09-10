@@ -761,8 +761,7 @@ The key&#39;s randomart image is:
 
 <p><strong>MongoDB backup</strong></p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file</span>
-0 4 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> mongodump <span class="nt">--out</span><span class="o">=</span>/home/servicedesk/backups/rocket-chat <span class="o">&amp;&amp;</span>
-<span class="nb">tar</span> <span class="nt">-zcvf</span> /home/servicedesk/backups/rocket-chat-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y-<span class="se">\%</span>m-<span class="se">\%</span>d-<span class="se">\%</span>H-<span class="se">\%</span>M<span class="si">)</span>.tar.gz /home/servicedesk/rocket-chat/
+0 4 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> mongodump <span class="nt">--out</span><span class="o">=</span>/home/servicedesk/backups/rocket-chat <span class="o">&amp;&amp;</span> <span class="nb">tar</span> <span class="nt">-zcvf</span> /home/servicedesk/backups/rocket-chat-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y-<span class="se">\%</span>m-<span class="se">\%</span>d-<span class="se">\%</span>H-<span class="se">\%</span>M<span class="si">)</span>.tar.gz /home/servicedesk/rocket-chat/
 </code></pre></div>
 <p><strong>Sync script</strong></p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="c"># Sync websites content every 10 minutes</span>
