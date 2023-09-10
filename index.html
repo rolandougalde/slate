@@ -372,6 +372,9 @@
             <a href="#copy-key-to-the-destination-server-s" class="toc-h1 toc-link" data-title="Copy key to the destination server(s).">Copy key to the destination server(s).</a>
           </li>
           <li>
+            <a href="#creates-a-mongodb-rocket-chat-database-then-compress-the-info-in-a-tgz-file" class="toc-h1 toc-link" data-title="Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file">Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file</a>
+          </li>
+          <li>
             <a href="#docker" class="toc-h1 toc-link" data-title="Docker">Docker</a>
               <ul class="toc-list-h2">
                   <li>
@@ -747,14 +750,23 @@ The key&#39;s randomart image is:
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$HOME</span>/.ssh/id_rsa– contains your private key.
 <span class="nv">$HOME</span>/.ssh/id_rsa.pub – contain your public key.
 </code></pre></div>
-<p><strong>Backup Script</strong></p>
+<p><strong>Backup Scripts</strong></p>
 
 <blockquote>
-<p>Backup script</p>
+<p>Website backup</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Create websites backup starting at at 1:00 a.m.</span>
 0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /bin/tar <span class="nt">-zcf</span> /home/davidx/backups/app-code-<span class="si">$(</span><span class="nb">date</span> +<span class="se">\%</span>Y_<span class="se">\%</span>m_<span class="se">\%</span>d_<span class="se">\%</span>H_<span class="se">\%</span>M<span class="si">)</span>.tar.gz /var/www
 </code></pre></div>
+<blockquote>
+<p>MongoDB backup
+```shell</p>
+<h1 id='creates-a-mongodb-rocket-chat-database-then-compress-the-info-in-a-tgz-file'>Creates a MongoDB, Rocket.Chat Database, then compress the info in a TGZ file</h1>
+<p>0 4 * * * mongodump --out=/home/servicedesk/backups/rocket-chat &amp;&amp;
+tar -zcvf /home/servicedesk/backups/rocket-chat-$(date +\%Y-\%m-\%d-\%H-\%M).tar.gz /home/servicedesk/rocket-chat/
+```</p>
+</blockquote>
+
 <p><strong>Sync script</strong></p>
 <div class="highlight"><pre class="highlight shell tab-shell"><code> <span class="c"># Sync websites content every 10 minutes</span>
 <span class="k">*</span>/10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server02:/var/www/ <span class="o">&amp;&amp;</span> /usr/bin/rsync <span class="nt">-az</span> <span class="nt">--delete</span> /var/www/ user@server03:/var/www/
