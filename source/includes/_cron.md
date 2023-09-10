@@ -7,7 +7,7 @@
 - Disable the password login for root account.
 - Test your password less ssh keys login using `ssh user@server-name` command.
 
-# Generating keys on the source server 
+## Generating keys on the source server 
 
 > Generating keys
 
@@ -36,7 +36,7 @@ The key's randomart image is:
 +-----------------+
 ```
 
-# Copy key to the destination server(s).
+## Copying the key to destination server(s).
 
 ```shell
 $ ssh-copy-id user@server02
