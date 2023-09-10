@@ -1,7 +1,6 @@
 # Cron Jobs
 
 ## Set up SSH Keys on a Linux System
-
 - Create the ssh key pair using `ssh-keygen` command.
 - Copy and install the public ssh key using `ssh-copy-id` command on a Linux server.
 - Add the working user to sudo or wheel group admin account.
